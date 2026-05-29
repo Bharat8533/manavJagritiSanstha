@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --saffron: #a63d00;
+  --maroon: #7a1f0e;
+  --gold: #d4a017;
+  --cream: #f4d28c;
+  --beige: #f7f1e5;
+  --text-dark: #2c1810;
+  --text-mid: #5c3a1e;
+  --shadow: rgba(164, 60, 0, 0.15);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--beige);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+nav.scrolled {
+  background: rgba(122, 31, 14, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-title{
+  font-family:'Cinzel',serif;
+  font-size:clamp(2rem,5vw,4rem);
+  color : var(--beige);
+  font-weight:900;
+  line-height:1.1;
+  text-shadow:0 0 60px rgba(212,160,23,0.4);
+  margin-bottom:.5rem
+}
+
+.section-title {
+  font-family: "Cinzel", serif;
+  color: var(--beige);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight:700;
+  text-align:center;
+  margin-bottom:.5rem
+}
