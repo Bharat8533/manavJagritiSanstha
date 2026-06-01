@@ -36,15 +36,15 @@ export interface DonorFormModalProps {
   onClose: () => void;
   donorInfo: DonorInfoType;
   selectedPlan: PlanType | null;
-  customAmount: string;
+  customAmount: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 export interface GauSevaPlansProps {
   selectedPlan: PlanType | null;
-  customAmount: string;
-  setCustomAmount: Dispatch<SetStateAction<string>>;
+  customAmount: number;
+  setCustomAmount: Dispatch<SetStateAction<number>>;
   onPlanSelect: (plan: PlanType) => void;
 }
 
@@ -109,4 +109,23 @@ export interface GurukulamJoinSectionProps {
   setFormData: Dispatch<SetStateAction<formData>>;
   handleSubmit: (e: React.FormEvent) => void;
   isSubmitting: boolean;
+}
+
+export interface CauseType {
+  id: string;
+  title: string;
+  badge: string;
+  desc: string;
+}
+
+export interface BlogPost {
+  id: number;
+  category: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  readTime: string;
+  image: string;
+  featured: boolean;
 }

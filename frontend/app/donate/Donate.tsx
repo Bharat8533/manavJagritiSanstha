@@ -2,9 +2,21 @@
 
 import React, { useState, useEffect } from "react";
 
+type DonationCause = {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: string;
+  description: string;
+  suggestedAmounts: string[];
+  defaultAmount: string;
+  upiId: string;
+  bgGradient: string;
+};
+
 export default function UnifiedDonationPage() {
   // Supported donation causes data structure
-  const donationCauses = [
+  const donationCauses : DonationCause[] = [
     {
       id: "gau_seva",
       title: "सुरभि गऊ सेवा फंड",
@@ -51,7 +63,7 @@ export default function UnifiedDonationPage() {
   const [timeLeft, setTimeLeft] = useState(300);
 
   // Synchronize layout when cause changes
-  const handleCauseChange = (cause) => {
+  const handleCauseChange = (cause: DonationCause) => {
     setSelectedCause(cause);
     setAmount(cause.defaultAmount);
     setTimeLeft(300); // Reset timer for new dynamic QR
@@ -64,7 +76,7 @@ export default function UnifiedDonationPage() {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
-  const formatTime = (seconds) => {
+  const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;

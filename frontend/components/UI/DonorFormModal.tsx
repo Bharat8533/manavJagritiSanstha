@@ -14,7 +14,7 @@ export default function DonorFormModal({
 }: DonorFormModalProps): React.JSX.Element | null {
   if (!isOpen) return null;
 
-  const displayAmount : string | number = selectedPlan?.amount || customAmount;
+  const displayAmount : number = selectedPlan?.amount || customAmount || 0;
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-hidden animate-[fadeIn_0.2s_ease-out]">
@@ -41,7 +41,7 @@ export default function DonorFormModal({
             <p className="text-xs text-[#5C3A1E]/70 pt-1 font-light">
               पवित्र संकल्प राशि:{" "}
               <span className="font-mono font-black text-[#A63D00] text-sm bg-[#A63D00]/5 px-2 py-0.5 rounded">
-                ₹{parseFloat(displayAmount || "0").toLocaleString("en-IN")}
+                ₹{displayAmount.toLocaleString("en-IN")}
               </span>{" "}
               —{" "}
               <span className="italic font-medium text-[#1E0F0A]">

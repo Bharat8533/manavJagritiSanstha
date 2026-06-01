@@ -170,18 +170,18 @@ export default function GauSevaPlans({
                       type="number"
                       placeholder="Enter custom amount"
                       value={customAmount}
-                      onChange={(e) => setCustomAmount(e.target.value)}
+                      onChange={(e) => setCustomAmount(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white/4 border border-white/10 rounded-xl py-3.5 pl-9 pr-4 text-white font-sans placeholder-white/20 focus:outline-none focus:border-[#D4A017] focus:bg-white/[0.07] text-sm font-semibold transition-all duration-300 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                   </div>
 
                   <button
-                    disabled={!customAmount || parseInt(customAmount) <= 0}
+                    disabled={!customAmount || customAmount <= 0}
                     onClick={() =>
                       onPlanSelect({
                         id: "custom",
                         title: "स्वेच्छा संकल्प",
-                        amount: parseInt(customAmount),
+                        amount: customAmount,
                         desc: "Custom Donation Account Setup",
                         badge: "स्वेच्छा संकल्प",
                       })
