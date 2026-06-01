@@ -2,13 +2,7 @@
 
 import React, { useState } from "react";
 import DonorFormModal from "../UI/DonorFormModal";
-
-interface CauseType {
-  id: string;
-  title: string;
-  badge: string;
-  desc: string;
-}
+import { CauseType } from "../UI/Types.types";
 
 const CAUSES_DATA: CauseType[] = [
   {
@@ -32,7 +26,8 @@ const CAUSES_DATA: CauseType[] = [
 ];
 
 export default function DonationForm(): React.JSX.Element {
-  const [donationAmount, setDonationAmount] = useState<string>("");
+  // 1. Kept strictly as a number type
+  const [donationAmount, setDonationAmount] = useState<number>(0);
   const [selectedCause, setSelectedCause] = useState<string>("general");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
@@ -51,7 +46,8 @@ export default function DonationForm(): React.JSX.Element {
 
   const handleFormOpenAttempt = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!donationAmount || parseFloat(donationAmount) <= 0) {
+    // 2. Fixed validation check directly using the number value
+    if (!donationAmount || donationAmount <= 0) {
       alert("कृपया एक वैध सहयोग राशि दर्ज करें।");
       return;
     }
@@ -70,6 +66,12 @@ export default function DonationForm(): React.JSX.Element {
 
   const currentSelectedCauseTitle =
     CAUSES_DATA.find((c) => c.id === selectedCause)?.title || "";
+
+  const currentSelectedCauseDescription =
+    CAUSES_DATA.find((c) => c.id === selectedCause)?.desc || "";
+
+  const currentSelectedCauseBadge =
+    CAUSES_DATA.find((c) => c.id === selectedCause)?.badge || "";
 
   return (
     <section
@@ -123,7 +125,7 @@ export default function DonationForm(): React.JSX.Element {
         <div className="lg:col-span-7 w-full relative z-10 bg-[#150B07]/60 border border-white/[0.06] rounded-[2.5rem] backdrop-blur-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.05)] p-2">
           <div className="border border-[#D4A017]/10 rounded-[2.3rem] p-6 sm:p-9 bg-radial from-white/[0.01] to-transparent">
             <form onSubmit={handleFormOpenAttempt} className="space-y-8">
-              {/* 01. Cause Selection - Grid Refinement */}
+              {/* 01. Cause Selection */}
               <div className="space-y-4 text-left">
                 <div className="flex justify-between items-center px-1">
                   <label className="text-xs sm:text-sm font-bold text-[#F4D28C] uppercase tracking-[0.2em] block">
@@ -148,7 +150,6 @@ export default function DonationForm(): React.JSX.Element {
                             : "bg-white/1 border-white/5 hover:border-white/15 hover:bg-white/3"
                         }`}
                       >
-                        {/* Active Soft Light Ring */}
                         {isSelected && (
                           <div className="absolute inset-0 border border-[#D4A017]/30 rounded-2xl animate-pulse pointer-events-none" />
                         )}
@@ -188,28 +189,31 @@ export default function DonationForm(): React.JSX.Element {
                 </label>
 
                 <div className="bg-[#1C120C] border border-white/[0.08] rounded-2xl p-4 flex flex-col gap-4 w-full group/container focus-within:border-[#D4A017]/40 transition-all duration-300">
-                  {/* Row 1: Main Input Component (Takes 100% Width of the container) */}
                   <div className="relative w-full group/input">
-                    {/* Clean Vector-Sized Currency Badge */}
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#F4D28C] font-serif text-lg font-bold pointer-events-none">
                       ₹
                     </span>
                     <input
                       type="number"
                       placeholder="अन्य राशि दर्ज करें"
-                      value={donationAmount}
-                      onChange={(e) => setDonationAmount(e.target.value)}
+                      // 3. Fallback to empty string when 0 so input placeholder displays nicely
+                      value={donationAmount === 0 ? "" : donationAmount}
+                      // 4. Safely parsing string to number on typing
+                      onChange={(e) =>
+                        setDonationAmount(Number(e.target.value))
+                      }
                       className="w-full bg-white/[0.02] border border-white/[0.05] rounded-xl py-3.5 pl-10 pr-4 text-white text-base font-semibold tracking-wide focus:outline-none focus:border-[#D4A017]/30 focus:bg-white/[0.04] transition-all duration-300 placeholder:text-white/20 placeholder:text-xs placeholder:font-normal"
                       required
                     />
                   </div>
 
-                  {/* Row 2: Quick Action Pack (Spans full width, 3 columns stretch equally) */}
+                  {/* Quick Action Pack */}
                   <div className="grid grid-cols-3 gap-3 w-full pt-1">
                     {[
-                      { value: "2100", label: "शुभ", desc: "Shubh" },
-                      { value: "5100", label: "समृद्धि", desc: "Samriddhi" },
-                      { value: "11000", label: "महा", desc: "Maha" },
+                      // 5. Converted these values to numbers
+                      { value: 2100, label: "शुभ", desc: "Shubh" },
+                      { value: 5100, label: "समृद्धि", desc: "Samriddhi" },
+                      { value: 11000, label: "महा", desc: "Maha" },
                     ].map((item) => {
                       const isSelected = donationAmount === item.value;
                       return (
@@ -223,14 +227,11 @@ export default function DonationForm(): React.JSX.Element {
                               : "bg-white/[0.02] border-white/[0.06] text-white/80 hover:bg-white/[0.06] hover:border-white/[0.15] hover:-translate-y-0.5"
                           }`}
                         >
-                          {/* Active Golden Radial Flare Background Effect */}
                           {isSelected && (
                             <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.4)_0%,transparent_70%)] opacity-70 animate-pulse pointer-events-none" />
                           )}
 
-                          {/* Top Floating Badge Row */}
                           <div className="flex items-center gap-1.5 mb-1">
-                            {/* Neon Active Indicator Pulse Dot */}
                             <span
                               className={`w-1 h-1 rounded-full transition-all duration-500 ${
                                 isSelected
@@ -238,7 +239,6 @@ export default function DonationForm(): React.JSX.Element {
                                   : "bg-[#D4A017]/40 group-hover/btn:bg-[#D4A017] group-hover/btn:scale-110"
                               }`}
                             />
-
                             <span
                               className={`text-[8px] font-sans font-bold tracking-[0.15em] uppercase transition-colors duration-300 ${
                                 isSelected
@@ -250,7 +250,6 @@ export default function DonationForm(): React.JSX.Element {
                             </span>
                           </div>
 
-                          {/* Main Core Typography (The Amount) */}
                           <span
                             className={`font-mono text-sm sm:text-base font-black tracking-wide transition-all duration-300 ${
                               isSelected
@@ -258,10 +257,11 @@ export default function DonationForm(): React.JSX.Element {
                                 : "text-white"
                             }`}
                           >
-                            ₹{parseInt(item.value).toLocaleString("en-IN")}
+                            {/* 6. Passed standard number to helper directly */}
+                            {/* Updated line-to rule for Tailwind v4 compatibility if required */}
+                            ₹{item.value.toLocaleString("en-IN")}
                           </span>
 
-                          {/* Cultural Subtext Dynamic Metadata Indicator */}
                           <span
                             className={`text-[9px] font-medium font-serif mt-1 tracking-wider opacity-0 transition-all duration-500 max-h-0 overflow-hidden group-hover/btn:opacity-100 group-hover/btn:max-h-4 ${
                               isSelected
@@ -272,7 +272,6 @@ export default function DonationForm(): React.JSX.Element {
                             {item.label} संकल्प
                           </span>
 
-                          {/* Bottom Interactive Glow Line */}
                           <div
                             className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-500 ${
                               isSelected
@@ -293,7 +292,6 @@ export default function DonationForm(): React.JSX.Element {
                   type="submit"
                   className="w-full bg-linear-to-r from-[#D4A017] via-[#C48C15] to-[#A63D00] text-white text-sm font-bold uppercase tracking-[0.25em] py-5 rounded-2xl text-center shadow-[0_20px_40px_-5px_rgba(166,61,0,0.3)] hover:opacity-95 hover:shadow-[0_25px_50px_-5px_rgba(212,160,23,0.4)] active:scale-[0.99] transition-all duration-500 cursor-pointer relative overflow-hidden group"
                 >
-                  {/* Subtle reflex shine effect */}
                   <div className="absolute inset-0 w-1/2 h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:animate-shine" />
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     संकल्प के साथ आगे बढ़ें
@@ -327,6 +325,8 @@ export default function DonationForm(): React.JSX.Element {
           id: selectedCause,
           title: currentSelectedCauseTitle,
           amount: donationAmount,
+          desc: currentSelectedCauseDescription,
+          badge: currentSelectedCauseBadge,
         }}
         customAmount={donationAmount}
         onChange={handleInputChange}

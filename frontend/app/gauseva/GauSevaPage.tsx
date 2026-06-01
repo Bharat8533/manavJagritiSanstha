@@ -7,12 +7,12 @@ import GauSevaGallery from "@/components/gauSeva/GauSevaGallery";
 import GauSevaImpact from "@/components/gauSeva/GauSevaImpact";
 import GauSevaPlans from "@/components/gauSeva/GauSevaPlans";
 import DonorFormModal from "@/components/gauSeva/DonorFormModal";
-import { PlanType, DonorInfoType } from "@/components/gauSeva/Types.types";
+import { PlanType, DonorInfoType } from "../../components/UI/Types.types";
 
 export default function GauSevaPage(): React.JSX.Element {
   // Global State Control
   const [selectedPlan, setSelectedPlan] = useState<PlanType | null>(null);
-  const [customAmount, setCustomAmount] = useState<string>("");
+  const [customAmount, setCustomAmount] = useState<number>(0);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [donorInfo, setDonorInfo] = useState<DonorInfoType>({
     fullName: "",
@@ -25,7 +25,7 @@ export default function GauSevaPage(): React.JSX.Element {
   const handlePlanSelect = (plan: PlanType): void => {
     setSelectedPlan(plan);
     if (plan.id !== "custom") {
-      setCustomAmount("");
+      setCustomAmount(0);
     }
     setIsModalOpen(true);
   };

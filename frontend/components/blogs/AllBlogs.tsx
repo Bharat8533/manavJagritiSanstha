@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import { BlogPost } from "../UI/Types.types";
 
-const BLOGS_DATA = [
+const BLOGS_DATA: BlogPost[] = [
   {
     id: 1,
     category: "धरोहर संरक्षण",
@@ -129,7 +130,7 @@ const BLOGS_DATA = [
   },
 ];
 
-const CATEGORIES = [
+const CATEGORIES : string[] = [
   "सभी लेख",
   "गौ सेवा",
   "संत वाणी",
@@ -140,7 +141,7 @@ const CATEGORIES = [
 
 export default function AllBlogs() {
   const [activeCategory, setActiveCategory] = useState("सभी लेख");
-  const [selectedBlog, setSelectedBlog] = useState(null);
+  const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
 
   const isAll = activeCategory === "सभी लेख";
 
@@ -148,7 +149,7 @@ export default function AllBlogs() {
     ? BLOGS_DATA.filter((b) => !b.featured)
     : BLOGS_DATA.filter((b) => b.category === activeCategory);
 
-  const featuredBlog = BLOGS_DATA.find((b) => b.featured);
+  const featuredBlog : BlogPost | undefined = BLOGS_DATA.find((b) => b.featured);
 
   return (
     <div className="bg-[#FCFAF5] min-h-screen text-[#2C1810] selection:bg-[#A63D00]/10 antialiased relative">

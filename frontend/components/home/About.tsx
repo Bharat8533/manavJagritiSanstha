@@ -35,25 +35,35 @@ export default function About() {
             <div className="relative w-full h-[450px] sm:h-[520px] rounded-[32px] overflow-hidden shadow-[0_22px_50px_rgba(44,24,16,0.18)] border-8 border-white group">
               {/* BACKUP PLACEHOLDER IMAGE: Replace 'src' with Maharaj Ji's real high-res photograph */}
               <img
-                src="https://mjsvrindavan.com/wp-content/uploads/2024/06/baba_bg.webp"
+                src="/images/maharaji4.jpeg"
                 alt="Shree Nimbark Brajraj Ji Maharaj"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition duration-1000 ease-out"
               />
-              {/* Soft gradient mask inside image for text pop */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-90" />
+              {/* Soft gradient mask inside image for text pop - adjusted for higher content volume */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-95" />
 
-              {/* Image Overlay Text: Maharaj Ji's Intro */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-left text-white">
-                <p className="text-[#F4D28C] text-xs font-semibold uppercase tracking-wider mb-1">
-                  पूज्य महाराज जी
+              {/* Image Overlay Text: Maharaj Ji's Intro with All Titles */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-left text-white z-10">
+                {/* Micro Titles List */}
+                <p className="text-[#F4D28C] text-[0.7rem] sm:text-[0.8rem] font-sans font-medium tracking-wide leading-relaxed mb-2 opacity-95">
+                  सनातन क्रांति अग्रदूत • अंतर्राष्ट्रीय सनातन धर्म प्रेरक • गौ
+                  गोवर्धन उपासक • नन्दयशोदा वृन्दावन पीठाधीश्वर
                 </p>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold mb-2 text-white">
-                  श्री निम्बार्क ब्रजराज जी महाराज
+
+                {/* Full Main Name */}
+                <h3 className="font-serif text-xl sm:text-3xl font-bold mb-3 text-white drop-shadow-md">
+                  पूज्य श्री ब्रजराज जी महाराज
                 </h3>
-                <p className="text-white/80 text-xs sm:text-sm leading-relaxed font-sans font-light">
-                  एक आत्मीय संकीर्तनवादी और दयालु मानवतावादी। श्री राधा
-                  सर्वेश्वर के अनन्य भक्त, जिनकी अमृतमयी भागवत कथा और विनम्रता
-                  भक्तों के हृदयों को छू लेती है।
+
+                {/* Short Divider Line */}
+                <div className="w-12 h-[1.5px] bg-[#D4A017]/60 mb-3" />
+
+                {/* Elegant Description */}
+                <p className="text-white/85 text-xs sm:text-sm leading-relaxed font-sans font-light max-w-[480px]">
+                  एक आत्मीय संकीर्तनवादी, दयालु मानवतावादी और श्री निम्बार्क
+                  सम्प्रदाय के गौरव। श्री राधा सर्वेश्वर के अनन्य भक्त, जिनकी
+                  अमृतमयी भागवत कथा और विनम्रता करोड़ों भक्तों के हृदयों को
+                  जागृत कर रही है।
                 </p>
               </div>
             </div>
