@@ -3,7 +3,6 @@
 import React from "react";
 import { GauSevaHeroProps } from "../UI/Types.types";
 
-
 export default function GauSevaHero({
   onActionClick,
 }: GauSevaHeroProps): React.JSX.Element {
@@ -26,19 +25,22 @@ export default function GauSevaHero({
 
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6 py-6">
         <span className="inline-block bg-[#D4A017]/10 border border-[#D4A017]/20 text-[#F4D28C] text-[0.65rem] font-bold tracking-[0.3em] uppercase px-3 py-1 rounded-full backdrop-blur-md">
-          परम पावन संकल्प | Govind Seva
+          परम पावन संकल्प | Surabhi Gaushala
         </span>
 
+        {/* Updated Title according to image note */}
         <h1 className="font-serif text-[clamp(2rem,5vw,3.5rem)] font-normal text-white leading-[1.3] tracking-wide">
-          श्री सुरभि आराधना |{" "}
-          <span className="text-transparent bg-clip-text pt-3 bg-linear-to-r from-[#F4D28C] via-[#D4A017] to-[#A63D00] font-bold">
-            गौ सेवा संकल्प
+          विश्व की प्रथम गौशाला |{" "}
+          <span className="text-transparent bg-clip-text pt-3 bg-linear-to-r from-[#F4D28C] via-[#D4A017] to-[#A63D00] font-bold block mt-1">
+            सुरभी गौ सेवा तीर्थ
           </span>
         </h1>
 
+        {/* Updated Description according to image note */}
         <p className="text-white/80 text-xs sm:text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto px-2">
-          वृंदावन धाम की पावन धरा पर बेसहारा, बीमार और आश्रित गौवंश के पोषण,
-          चिकित्सा एवं संरक्षण हेतु अपना योगदान देकर अनंत पुण्य के भागीदार बनें।
+          एक अनूठा पावन धाम, जहाँ श्रद्धेय महाराज जी स्वयं अपने संपूर्ण परिवार
+          सहित गौवंश की आत्मीय सेवा करते हैं। इस दिव्य सेवा अनुष्ठान से जुड़कर
+          अनंत पुण्य के भागीदार बनें।
         </p>
 
         <div className="pt-4">

@@ -6,31 +6,31 @@ import { PlanType, GauSevaPlansProps } from "../UI/Types.types";
 const PLANS_DATA: PlanType[] = [
   {
     id: "one-meal",
-    title: "एक समय का भोजन (One Meal)",
-    amount: 1100,
-    desc: "पावन गऊ माताओं को एक समय का हरा चारा एवं पौष्टिक कुट्टी सेवा।",
+    title: "एक समय का संपूर्ण भोजन (One Full Meal)",
+    amount: 11000, // Balanced logical amount for a community gaushala meal batch
+    desc: "संपूर्ण गौशाला की पावन गऊ माताओं को एक समय का पौष्टिक हरा चारा, कुट्टी एवं अमृत जल सेवा।",
     badge: "सुलभ सेवा",
   },
   {
     id: "three-days",
-    title: "3 दिवसीय संपूर्ण सेवा",
-    amount: 3100,
-    desc: "3 दिनों तक औषधीय खल, चोकर एवं गुड़ मिश्रित पौष्टिक आहार।",
+    title: "3 दिवसीय संपूर्ण पोषण सेवा",
+    amount: 31000,
+    desc: "3 दिनों तक समस्त गौवंश के लिए औषधीय खल, चोकर, दलिया एवं गुड़ मिश्रित विशेष पौष्टिक आहार।",
     badge: "विशेष संकल्प",
   },
   {
     id: "seven-days",
-    title: "7 दिवसीय साप्ताहिक सेवा",
-    amount: 7100,
-    desc: "एक सप्ताह तक गऊशाला की समस्त गऊ माताओं की संपूर्ण सेवा एवं चिकित्सा व्यवस्था।",
+    title: "7 दिवसीय साप्ताहिक महासेवा",
+    amount: 71000,
+    desc: "एक सप्ताह तक सुरभी तीर्थ की समस्त गऊ माताओं के भोजन, आश्रय प्रबंधन एवं संपूर्ण चिकित्सा व्यवस्था का दायित्व।",
     badge: "लोकप्रिय",
     isFeatured: true,
   },
   {
     id: "one-month",
-    title: "1 मासिक पूर्ण गऊ कायस्थ",
-    amount: 21000,
-    desc: "एक मास तक गऊ माताओं के लिए चारे, चोकर, अमृत जल एवं रखरखाव का पूर्ण दायित्व।",
+    title: "1 मासिक पूर्ण गऊ संरक्षण संकल्प",
+    amount: 251000, // Realistic corporate/high-donor monthly adoption cost
+    desc: "एक मास तक संपूर्ण गौशाला के चारे, चोकर, उत्तम चिकित्सा, सहायकों के मानदेय एवं रखरखाव का पूर्ण संरक्षण दायित्व।",
     badge: "महा संकल्प",
   },
 ];
@@ -52,9 +52,9 @@ export default function GauSevaPlans({
       <div className="absolute bottom-[-10%] left-[-10%] w-125 h-125 bg-[#D4A017]/4 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Main Split Architecture Frame - 'items-start' keeps the DOM stream dynamic */}
+        {/* Main Split Architecture Frame */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* LEFT SIDEBAR COLUMN: Now reinforced with 'h-fit' to prevent ghost bounding boxes */}
+          {/* LEFT SIDEBAR COLUMN */}
           <div className="lg:col-span-5 space-y-8 lg:sticky self-start h-fit">
             <div className="space-y-4 text-left">
               <span className="inline-block text-[10px] font-bold tracking-[0.3em] text-[#A63D00] uppercase bg-[#A63D00]/5 border border-[#A63D00]/10 px-3.5 py-1.5 rounded-md">
@@ -87,7 +87,7 @@ export default function GauSevaPlans({
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Keeps the grid dynamic so that sidebar has vertical space to glide */}
+          {/* RIGHT COLUMN */}
           <div className="lg:col-span-7 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
               {/* Individual Plan Cards */}
@@ -155,9 +155,9 @@ export default function GauSevaPlans({
                     स्वेच्छा संकल्प (Custom Pledge)
                   </h3>
                   <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed max-w-2xl">
-                    आप अपनी इच्छानुसार कोई भी कस्टमाइज्ड राशि दर्ज करके सीधे
-                    सीधे गौ सेवा कोष में योगदान दे सकते हैं। आपकी सूक्ष्म
-                    श्रद्धा भी गऊ माताओं के आश्रय और उपचार में अत्यंत सहायक है।
+                    आप अपनी इच्छानुसार कोई भी कस्टमाइज्ड राशि दर्ज करके सीधे गौ
+                    सेवा कोष में योगदान दे सकते हैं। आपकी सूक्ष्म श्रद्धा भी गऊ
+                    माताओं के आश्रय और उपचार में अत्यंत सहायक है।
                   </p>
                 </div>
 
@@ -169,8 +169,10 @@ export default function GauSevaPlans({
                     <input
                       type="number"
                       placeholder="Enter custom amount"
-                      value={customAmount}
-                      onChange={(e) => setCustomAmount(parseFloat(e.target.value) || 0)}
+                      value={customAmount || ""}
+                      onChange={(e) =>
+                        setCustomAmount(parseFloat(e.target.value) || 0)
+                      }
                       className="w-full bg-white/4 border border-white/10 rounded-xl py-3.5 pl-9 pr-4 text-white font-sans placeholder-white/20 focus:outline-none focus:border-[#D4A017] focus:bg-white/[0.07] text-sm font-semibold transition-all duration-300 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                     />
                   </div>
