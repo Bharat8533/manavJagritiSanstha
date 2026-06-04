@@ -1,8 +1,10 @@
 import React from "react";
-import {KathaAmountInfoProps} from "../UI/Types.types";
+import { KathaAmountInfoProps } from "../UI/Types.types";
 
-export default function KathaAmountInfo({ selectedKatha }: KathaAmountInfoProps) {
-  // Mock display pricing matrix depending upon types selection
+export default function KathaAmountInfo({
+  selectedKatha,
+}: KathaAmountInfoProps) {
+  // Balanced display pricing matrix matching all updated selection options
   const getAmountDetails = () => {
     switch (selectedKatha) {
       case "shrimad-bhagavat":
@@ -23,11 +25,41 @@ export default function KathaAmountInfo({ selectedKatha }: KathaAmountInfoProps)
           inclusion:
             "7 दिवसीय महापुराण पोथी स्थापना, रुद्राभिषेक पूजन सामग्री सहित।",
         };
+      case "shri-krishna-leela":
+        return {
+          base: "₹1,31,000",
+          inclusion:
+            "5 या 7 दिवसीय दिव्य झांकी उत्सव, मधुर माखन लीला, छप्पन भोग सामग्री एवं संगीत मंडल।",
+        };
+      case "devi-bhagavat":
+        return {
+          base: "₹1,81,000",
+          inclusion:
+            "9 दिवसीय शक्ति अनुष्ठान, दुर्गा सप्तशती पाठ, हवन वेदी निर्माण एवं दैनिक महाआरती श्रृंगार।",
+        };
+      case "mahamrityunjay-jaap":
+        return {
+          base: "₹51,000",
+          inclusion:
+            "विशेष संकल्पित वैदिक ब्राह्मणों द्वारा सवा लाख (1,25,000) महामृत्युंजय मंत्र जाप एवं दशांश हवन सामग्री।",
+        };
+      case "ganesh-purana":
+        return {
+          base: "₹75,000",
+          inclusion:
+            "3 या 5 दिवसीय श्री गणेश मोदक अर्चन, दूर्वांकुर अभिषेक सामग्री एवं दैनिक रिद्धि-सिद्धि मंगल आरती।",
+        };
       case "satyanarayan-vrat":
         return {
           base: "₹21,000",
           inclusion:
             "एक दिवसीय पूर्ण सत्यनारायण कथा, हवन कुंड एवं आचार्य दक्षिणा।",
+        };
+      case "garuda-purana":
+        return {
+          base: "₹41,000",
+          inclusion:
+            "7 दिवसीय नारायण बलि / गरुड़ पुराण मूल पाठ वाचन, श्राद्ध तर्पण सामग्री एवं नारायण महापूजा।",
         };
       default:
         return {
@@ -69,15 +101,15 @@ export default function KathaAmountInfo({ selectedKatha }: KathaAmountInfoProps)
           <li className="flex gap-2.5 items-start">
             <span className="text-[#A63D00] shrink-0">🔸</span>
             <span>
-              <b className="font-bold">**व्यासपीठ मर्यादा:**</b> संस्थान की
-              व्यासपीठ से केवल शास्त्रीय सनातन सिद्धांतों और प्रामाणिक ग्रंथों
-              के प्रसंगों का ही वाचन होगा।
+              <b className="font-bold">व्यासपीठ मर्यादा:</b> संस्थान की व्यासपीठ
+              से केवल शास्त्रीय सनातन सिद्धांतों और प्रामाणिक ग्रंथों के
+              प्रसंगों का ही वाचन होगा।
             </span>
           </li>
           <li className="flex gap-2.5 items-start">
             <span className="text-[#A63D00] shrink-0">🔸</span>
             <span>
-              <b className="font-bold">**आश्रम आवास नियमावली:**</b> यदि आयोजन
+              <b className="font-bold">आश्रम आवास नियमावली:</b> यदि आयोजन
               वृंदावन आश्रम में है, तो यजमान के अतिथियों (अधिकतम 30 व्यक्ति) के
               आवास एवं सात्विक भोजन की व्यवस्था आश्रम द्वारा संभाली जाएगी।
             </span>
@@ -85,9 +117,9 @@ export default function KathaAmountInfo({ selectedKatha }: KathaAmountInfoProps)
           <li className="flex gap-2.5 items-start">
             <span className="text-[#A63D00] shrink-0">🔸</span>
             <span>
-              <b className="font-bold">**बाहरी आयोजन:**</b> निज निवास या
-              जन-पंडाल में आयोजन होने पर व्यासजी एवं संगीतकारों के सुगम यातायात
-              तथा सात्विक आवास की व्यवस्था यजमान पक्ष को सुनिश्चित करनी होगी।
+              <b className="font-bold">बाहरी आयोजन:</b> निज निवास या जन-पंडाल
+              में आयोजन होने पर व्यासजी एवं संगीतकारों के सुगम यातायात तथा
+              सात्विक आवास की व्यवस्था यजमान पक्ष को सुनिश्चित करनी होगी।
             </span>
           </li>
         </ul>
@@ -102,8 +134,7 @@ export default function KathaAmountInfo({ selectedKatha }: KathaAmountInfoProps)
           यदि आपके मन में तिथि विस्तार, व्यास पीठ आचार्य चयन अथवा दान राशि छूट
           (80G कर लाभ) सम्बन्धी कोई प्रश्न हैं, तो निसंकोच हमारे मुख्य न्यासी
           कक्ष में संशय निवारण केंद्र{" "}
-          <b className="text-white font-bold"> **+91 98765 43210** </b> पर कॉल
-          करें।
+          <b className="text-white font-bold"> +91 98765 43210 </b> पर कॉल करें।
         </p>
       </div>
     </div>

@@ -3,6 +3,19 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
+// 1. Navigation Links का Data Structure
+const NAV_LINKS = [
+  { label: "Home", href: "/", icon: "" },
+  { label: "About", href: "/about", icon: "ℹ️" },
+  { label: "Gau Seva", href: "/gauseva", icon: "🐄" },
+  { label: "Katha Booking", href: "/kathaBooking", icon: "📿" },
+  { label: "Braj Darshan", href: "/brajDarshan", icon: "🛕" },
+  { label: "Temples", href: "/temple", icon: "🏛" },
+  { label: "Gurukulam", href: "/gurukulam", icon: "✨" },
+  { label: "Blogs", href: "/blogs", icon: "📖" },
+  { label: "Contact", href: "/contact", icon: "📞" },
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -10,20 +23,14 @@ export default function Navbar() {
   // Handle background change on scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMobileNav = () => {
-    setIsMobileOpen(!isMobileOpen);
-  };
+  const toggleMobileNav = () => setIsMobileOpen(!isMobileOpen);
 
   const handleDonateClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -55,84 +62,22 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links (Looping dynamically) */}
           <ul className="hidden md:flex items-center gap-6 list-none">
-            <li>
-              <Link
-                href="/"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/gauseva"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Gau Seva
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/kathaBooking"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Katha
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/brajDarshan"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Braj Darshan
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/temple"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Temples
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/gurukulam"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Gurukulam
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/blogs"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
-              >
-                Contact
-              </Link>
-            </li>
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            {/* Desktop Donate Button */}
             <li>
               <Link
                 href="/donate"
-                // onClick={handleDonateClick}
                 className="bg-gradient-to-r from-[#D4A017] to-[#A63D00] text-white py-1.5 px-4 rounded-[20px] font-semibold text-[0.78rem] shadow-[0_4px_15px_rgba(212,160,23,0.4)] block transition transform hover:scale-105"
               >
                 🙏 Donate Now
@@ -159,69 +104,24 @@ export default function Navbar() {
             : "opacity-0 pointer-events-none -translate-y-4"
         }`}
       >
-        <Link
-          href="/about"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          About Trust
-        </Link>
-        <Link
-          href="/gauSeva"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          🐄 Gau Seva
-        </Link>
-        <Link
-          href="/kathaBooking"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          📿 Katha Booking
-        </Link>
-        <Link
-          href="/brajDarshan"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          🛕 Braj Darshan
-        </Link>
-        <Link
-          href="#product"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          ✨ Narayan Kavach
-        </Link>
-        <Link
-          href="/gurukulam"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          ✨ Gurukulam
-        </Link>
-        <Link
-          href="/temple"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          🏛 Temple Restoration
-        </Link>
-        <Link
-          href="/blog"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          📖 Blogs
-        </Link>
-        <Link
-          href="/contact"
-          onClick={toggleMobileNav}
-          className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition"
-        >
-          📞 Contact
-        </Link>
+        {/* Mobile Navigation Links (Looping dynamically) */}
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            onClick={toggleMobileNav}
+            className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition flex items-center justify-center gap-2"
+          >
+            {link.icon && <span>{link.icon}</span>}
+            {link.label === "Katha"
+              ? "Katha Booking"
+              : link.label === "About"
+                ? "About Trust"
+                : link.label}
+          </Link>
+        ))}
+
+        {/* Mobile Donate Button */}
         <Link
           href="#"
           onClick={(e) => {
