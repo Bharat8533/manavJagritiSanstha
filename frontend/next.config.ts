@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./app/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   images: {
@@ -8,6 +11,16 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
         port: "",
         pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "",
+        pathname: "/manavjagritisanstha/assets/**",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
       },
       {
         protocol: "https",
@@ -58,8 +71,12 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+    unoptimized: true,
   },
   // output: "export",
 };
 
-export default nextConfig;
+
+/** @type {import('next').NextConfig} */
+
+export default withNextIntl(nextConfig);

@@ -1,20 +1,12 @@
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export default function PremiumYatraMotiveLight() {
-  const motives = [
-    {
-      title: "संस्कार और संस्कृति जागृति",
-      desc: "आधुनिकता की दौड़ में लुप्त हो रहे सनातन संस्कारों को पुनः जीवित करना और युवा पीढ़ी को अपनी मूल सांस्कृतिक जड़ों (Vedic Roots) से जोड़ना।",
-    },
-    {
-      title: "प्राकृतिक और आध्यात्मिक संरक्षण",
-      desc: "ब्रज के प्राचीन वनों, कुंडों और पर्वतों के प्रति श्रद्धा भाव जगाना, ताकि इस पावन पर्यावरण धरोहर का संवर्धन और संरक्षण हो सके।",
-    },
-    {
-      title: "भक्ति योग और आत्मशुद्धि",
-      desc: "२५२ किलोमीटर की इस पावन परिक्रमा का मुख्य उद्देश्य केवल पर्यटन नहीं, बल्कि संतों के सानिध्य में नाम-संकीर्तन द्वारा अंतःकरण की शुद्धि है।",
-    },
-  ];
+  const t = useTranslations("YatraMotive");
+  const motives = [1, 2, 3].map((id) => ({
+    title: t(`motives.${id}.title`),
+    desc: t(`motives.${id}.desc`),
+  }));
 
   return (
     <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-[#FCFAF6] text-[#3D2511] overflow-hidden selection:bg-[#D4A017]/30 selection:text-[#3D2511]">
@@ -37,12 +29,13 @@ export default function PremiumYatraMotiveLight() {
             <div className="w-12 h-px bg-[#B8860B]/40 mb-6" />
 
             <span className="text-[9px] font-sans font-bold text-[#8A5A16] uppercase tracking-[0.3em] block mb-6">
-              Mantra & Vision
+              मंत्र एवं संकल्प
             </span>
 
             {/* Holy Sanskrit Shloka Structure */}
             <blockquote className="font-serif text-xl sm:text-2xl text-[#5C3A1A] font-semibold leading-[1.6] tracking-wide mb-8 relative">
-              "ब्रजभूमिः परं धाम <br />
+              "ब्रजभूमिः परं धाम
+              <br />
               <span className="pl-4 block mt-1">शरीरे प्राणवन्मम।</span>
               यत्र लीलां करोत्येव <br />
               <span className="pl-4 block mt-1">
@@ -55,9 +48,7 @@ export default function PremiumYatraMotiveLight() {
 
             {/* Translation Text Content */}
             <p className="text-xs sm:text-sm text-[#7A5833] leading-relaxed font-normal font-sans group-hover:text-[#5C3A1A] transition-colors duration-300">
-              हमारा परम संकल्प ब्रजमंडल की उस शाश्वत और अनमोल विरासत को सहेजना
-              है, जहां आज भी परात्पर भगवान श्रीकृष्ण की दिव्य निकुंज लीलाएं
-              प्रवाहित होती हैं।
+              {t("p")}
             </p>
 
             {/* Outer Subtle Border Highlight */}
@@ -71,13 +62,13 @@ export default function PremiumYatraMotiveLight() {
               <div className="inline-flex items-center gap-2">
                 <span className="h-1 w-1 rounded-full bg-[#B8860B]" />
                 <span className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-[#8A5A16]">
-                  Our Philosophy
+                  {t("subheading2")}
                 </span>
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#3D2511] tracking-wide leading-tight">
-                यात्रा के पीछे का <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8A5A16] via-[#B8860B] to-[#A63D00] font-extrabold">
-                  पावन एवं परम उद्देश्य
+                {t("headingquote1")}
+                <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-r from-[#8A5A16] via-[#B8860B] to-[#A63D00] font-extrabold">
+                  {t("headingquote2")}
                 </span>
               </h2>
             </div>

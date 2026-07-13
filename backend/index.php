@@ -116,7 +116,9 @@ switch (ENVIRONMENT)
  */
 	$application_folder = 'application';
 
+require_once __DIR__ . '/vendor/autoload.php';
 /*
+
  *---------------------------------------------------------------
  * VIEW DIRECTORY NAME
  *---------------------------------------------------------------

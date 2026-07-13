@@ -26,7 +26,7 @@ export default function HeroSection() {
         <h1 className="font-serif text-[clamp(2rem,5vw,3.5rem)] font-normal text-white leading-[1.3] tracking-wide">
           शुद्ध वैदिक क्रियाओं का |{" "} <br />
           <span className="text-transparent bg-clip-text pt-2 bg-linear-to-r from-[#F4D28C] via-[#D4A017] to-[#A63D00] font-bold">
-            घर-घर पुनरुद्धार विज्ञान
+            घर-घर पुनरुद्धार आधात्मिक विज्ञान का प्रचार
           </span>
         </h1>
 

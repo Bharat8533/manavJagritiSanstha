@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export default function CtaSection() {
+  const t = useTranslations("CtaSection");
   const handleModalClick = (e: React.MouseEvent, type: string) => {
+  
     e.preventDefault();
     if (typeof window !== "undefined" && (window as any).openModal) {
       (window as any).openModal(type);
@@ -18,24 +21,22 @@ export default function CtaSection() {
       className="py-20 px-6 text-center bg-gradient-to-br from-[#A63D00] via-[#D4A017] to-[#A63D00] bg-[length:200%_200%] relative overflow-hidden"
       style={{
         animation: "gradientMove 8s ease infinite",
-      }}
-    >
+      }}>
       {/* Structural Inner Container */}
       <div className="max-w-[850px] mx-auto space-y-6 relative z-10">
         {/* Main Devotional Badge */}
         <span className="inline-block bg-white/10 backdrop-blur-sm border border-white/25 text-[#F4D28C] text-[0.8rem] font-bold tracking-[0.2em] uppercase px-5 py-1.5 rounded-full shadow-sm">
-          🤝 Become a Volunteer
+          {t("subheading")}
         </span>
 
         {/* Primary Hindi Heading */}
         <h2 className="font-serif text-[clamp(1.6rem,4vw,2.6rem)] text-white font-black leading-tight drop-shadow-[0_2px_15px_rgba(0,0,0,0.2)]">
-          मानव जाग्रती संस्था के सेवा कार्यो में सहयोगी बनें
+          {t("heading")}
         </h2>
 
         {/* Secondary Context Block */}
         <p className="text-white/90 text-[0.95rem] sm:text-[1.05rem] leading-relaxed font-sans max-w-[720px] mx-auto drop-shadow-sm">
-          श्री निम्बार्क ब्रजराज जी महाराज से जुड़ने के लिए अथवा किसी भी प्रकार
-          की कथा या पूजा पाठ करवाने के लिए संपर्क करें
+          {t("p")}
         </p>
 
         {/* Prominent Direct Phone Numbers Display */}

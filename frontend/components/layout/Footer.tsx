@@ -1,177 +1,176 @@
 "use client";
 
 import React from "react";
+import {
+  FaFacebookF,
+  FaYoutube,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa";
 import Link from "next/link";
 
 export default function Footer() {
-  const handleModalClick = (e: React.MouseEvent, type: string) => {
-    e.preventDefault();
-    if (typeof window !== "undefined" && (window as any).openModal) {
-      (window as any).openModal(type);
-    } else {
-      console.log(`Open modal for: ${type}`);
-    }
-  };
-
+  const phoneNumber = "919319087326";
+  const message = "Hello Manav Jagriti Sanstha";
   return (
-    <footer className="bg-[#100500] text-[#F4D28C]/70 pt-16 pb-8 px-6 md:px-12 border-t border-[#D4A017]/10">
+    // Background: Creamy Light | Text: Deep Brown
+    <footer className="bg-[#FDFBF7] text-[#5D4037] pt-16 pb-8 px-6 md:px-12 border-t border-[#D4A017]/20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
-        {/* BRAND & TRUST DETAILS (Spans 4 Columns on Large Screens) */}
-        <div className="lg:col-span-4 space-y-4">
-          <span className="font-serif text-xl text-[#F4D28C] block tracking-wide">
-            🕉 मानव जागृति संस्थान
-          </span>
-          <p className="text-[0.78rem] leading-relaxed text-[#F4D28C]/50 font-sans">
-            A sacred trust dedicated to Gau Seva, Sant Seva, Yamuna cleaning,
-            and the divine spiritual kathas of Maharaj Ji. Founded with
-            blessings in Vrindavan Dham, serving humanity and preserving
-            traditional values since 2008.
-          </p>
-          <div className="bg-[#D4A017]/5 border border-[#D4A017]/15 rounded-xl p-4 text-[0.7rem] text-[#F4D28C]/50 space-y-1 leading-relaxed">
-            <strong className="font-serif text-[#F4D28C]/80 block text-[0.75rem] tracking-wider mb-1">
-              Trust Registration Details
-            </strong>
-            <div>Registered Trust No: UP/2008/0012345</div>
-            <div>80G Exemption: AAATS1234G</div>
-            <div>12A Certificate: Reg/2009/MJS</div>
+        {/* BRAND & TRUST DETAILS */}
+        <div className="lg:col-span-4 space-y-4 bg-white/50 p-6 rounded-2xl border border-[#D4A017]/10 shadow-sm">
+          <div className="w-32">
+            <img
+              src="https://mjsvrindavan.com/wp-content/uploads/2025/09/logo.png"
+              alt="Logo"
+            />
           </div>
+          <p className="text-[0.9rem] leading-relaxed text-[#5D4037]/70 font-sans">
+            Manav Jagriti Sanstha is a charitable trust which was established in
+            the holy presence of Nimbark Go Goverdhan Upashak Aacharay Shri
+            Brajraj ji Maharaj (Founder), under provision of Indian Trust Act on
+            20th April 2006.
+          </p>
         </div>
 
-        {/* QUICK LINKS (Spans 2 Columns on Large Screens) */}
+        {/* QUICK LINKS */}
         <div className="lg:col-span-2">
-          <div className="font-serif text-[#F4D28C] text-[0.85rem] font-bold mb-4 tracking-wider uppercase">
+          <div className="font-serif text-[#A63D00] text-[0.85rem] font-bold mb-4 tracking-wider uppercase">
             Quick Links
           </div>
-          <ul className="space-y-2.5 text-[0.78rem]">
+          <ul className="space-y-3">
             {[
-              { label: "About Trust", href: "/about" },
-              { label: "Gau Seva", href: "/gauSeva" },
-              { label: "Katha Booking", href: "/kathaBooking" },
-              { label: "Braj Yatra", href: "#yatra" },
-              { label: "Narayan Kavach", href: "#product" },
-              { label: "Temple Restoration", href: "/temple" },
-            ].map((link, idx) => (
+              {
+                label: "About Trust",
+                href: "/about",
+              },
+              {
+                label: "Katha Booking",
+                href: "/kathaBooking",
+              },
+              {
+                label: "Gau Seva",
+                href: "/gauseva",
+              },
+              {
+                label: "Braj Darshan",
+                href: "/brajDarshan",
+              },
+              {
+                label: "Temple Restoration",
+                href: "/temple",
+              },
+              {
+                label: "Gallery",
+                href: "/gallery",
+              },
+            ].map((obj, idx) => (
               <li key={idx}>
                 <Link
-                  href={link.href}
-                  className="text-[#F4D28C]/50 hover:text-[#F4D28C] transition duration-300 flex items-center gap-1.5 before:content-['›'] before:text-[#D4A017] before:text-sm"
+                  href={obj.href}
+                  className="text-[#5D4037]/70 hover:text-[#A63D00] transition flex items-center gap-2"
                 >
-                  {link.label}
+                  <span className="text-[#D4A017]">›</span> {obj.label}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* DONATE SECTIONS (Spans 2 Columns on Large Screens) */}
+        {/* LEGAL & POLICIES */}
         <div className="lg:col-span-2">
-          <div className="font-serif text-[#F4D28C] text-[0.85rem] font-bold mb-4 tracking-wider uppercase">
-            Donate
+          <div className="font-serif text-[#A63D00] text-[0.85rem] font-bold mb-4 tracking-wider uppercase">
+            Legal
           </div>
-          <ul className="space-y-2.5 text-[0.78rem]">
+          <ul className="space-y-3">
             {[
-              { label: "Gau Mata Seva", type: "gau" },
-              { label: "Temple Fund", type: "temple" },
-              { label: "Anna Daan", type: "donate" },
-              { label: "Education Fund", type: "donate" },
-              { label: "Medical Seva", type: "donate" },
-              { label: "General Donation", type: "donate" },
-            ].map((item, idx) => (
+              {
+                label: "Terms & Conditions",
+                href: "/terms",
+              },
+              {
+                label: "Privacy Policy",
+                href: "/privacy",
+              },
+              {
+                label: "Refund & Return",
+                href: "/refunds",
+              },
+            ].map((obj, idx) => (
               <li key={idx}>
                 <Link
-                  href="#"
-                  onClick={(e) => handleModalClick(e, item.type)}
-                  className="text-[#F4D28C]/50 hover:text-[#F4D28C] transition duration-300 flex items-center gap-1.5 before:content-['›'] before:text-[#D4A017] before:text-sm"
+                  href={obj.href}
+                  className="text-[#5D4037]/70 hover:text-[#A63D00] transition flex items-center gap-2"
                 >
-                  {item.label}
+                  <span className="text-[#D4A017]">›</span> {obj.label}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* LEGAL & POLICIES (Spans 2 Columns on Large Screens) */}
-        <div className="lg:col-span-2">
-          <div className="font-serif text-[#F4D28C] text-[0.85rem] font-bold mb-4 tracking-wider uppercase">
-            Legal & Policies
+        {/* CONTACT US */}
+        <div className="lg:col-span-4 space-y-4">
+          <div className="font-serif text-[#A63D00] text-[0.85rem] font-bold mb-4 tracking-wider uppercase">
+            Contact Us
           </div>
-          <ul className="space-y-2.5 text-[0.78rem]">
-            {[
-              { label: "Terms & Conditions", href: "/terms" },
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Refund & Return", href: "/refunds" },
-            ].map((policy, idx) => (
-              <li key={idx}>
-                <Link
-                  href={policy.href}
-                  className="text-[#F4D28C]/50 hover:text-[#F4D28C] transition duration-300 flex items-center gap-1.5 before:content-['›'] before:text-[#D4A017] before:text-sm"
-                >
-                  {policy.label}
-                </Link>
-              </li>
-            ))}
+          <ul className="space-y-3 text-[#5D4037]/80">
+            <li className="flex items-start gap-2">
+              <span className="mt-1">📍</span>
+              <span>Manav Jagriti Sanstha, Rajpur Vrindavan, 281121</span>
+            </li>
+            <li className="flex items-center gap-2 hover:text-[#A63D00] transition">
+              <span>📞</span>{" "}
+              <Link href="tel:+919319087326">+91 93190 87326</Link>
+            </li>
+            <li className="flex items-center gap-2 hover:text-[#A63D00] transition">
+              <span>📞</span>{" "}
+              <Link href="tel:+919319087326">+91 92196 63835</Link>
+            </li>
+            <li className="flex items-center gap-2 hover:text-[#A63D00] transition">
+              <span>✉️</span>{" "}
+              <Link href="mailto:manavjagriti19@gmail.com">
+                manavjagriti19@gmail.com
+              </Link>
+            </li>
           </ul>
-        </div>
-
-        {/* CONTACT US (Spans 2 Columns on Large Screens) */}
-        <div className="lg:col-span-2 space-y-4">
-          <div>
-            <div className="font-serif text-[#F4D28C] text-[0.85rem] font-bold mb-4 tracking-wider uppercase">
-              Contact Us
-            </div>
-            <ul className="space-y-2.5 text-[0.78rem] text-[#F4D28C]/50 font-sans">
-              <li className="leading-relaxed flex items-start gap-1.5">
-                <span className="flex-shrink-0 mt-0.5">📍</span>
-                <span>
-                  46, Godhuli Puram Colony Main Rd, Posh Colony, Gaudholi Puram
-                  Twp, Vrindavan, UP - 281121
-                </span>
-              </li>
-              <li className="flex items-center gap-1.5 hover:text-[#F4D28C] transition">
-                <span>📞</span>
-                <Link href="tel:+919319087326">+91 93190 87326</Link>
-              </li>
-              <li className="flex items-center gap-1.5 hover:text-[#F4D28C] transition">
-                <span>📞</span>
-                <Link href="tel:+919219663835">+91 92196 63835</Link>
-              </li>
-              <li className="flex items-center gap-1.5 hover:text-[#F4D28C] transition break-all">
-                <span>✉️</span>
-                <Link href="mailto:brajraj151@gmail.com">brajraj151@gmail.com</Link>
-              </li>
-            </ul>
-          </div>
-
         </div>
       </div>
 
-      {/* FOOTER BOTTOM PANEL */}
-      <div className="max-w-[1200px] mx-auto pt-6 border-t border-[#D4A017]/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-        <p className="text-[0.72rem] text-[#F4D28C]/40 font-sans max-w-[750px] leading-relaxed">
-          © 2026 Manav Jagriti Sansthan. All rights reserved. Donations are
-          tax-exempt under Section 80G of the Income Tax Act.
+      {/* FOOTER BOTTOM */}
+      <div className="max-w-[1200px] mx-auto pt-6 border-t border-[#D4A017]/20 flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
+        <p className="text-[0.75rem] text-[#5D4037]/60">
+          © {new Date().getFullYear()} Manav Jagriti Sanstha. All rights
+          reserved. Donations are tax-exempt.
         </p>
 
-        {/* SOCIAL LINK BUTTONS */}
-        <div className="flex gap-2.5">
+        {/* SOCIAL LINKS */}
+        <div className="flex gap-3">
           {[
-            { label: "f", href: "#", title: "Facebook" },
-            { label: "▶", href: "#", title: "YouTube" },
-            { label: "📷", href: "#", title: "Instagram" },
-            { label: "🕭", href: "#", title: "Twitter" },
             {
-              label: "💬",
-              href: "https://wa.me/919319087326",
-              title: "WhatsApp",
+              label: FaFacebookF,
+              href: "https://www.facebook.com/manavjagritisanstha/",
             },
-          ].map((social, idx) => (
+            {
+              label: FaYoutube,
+              href: "https://www.youtube.com/@manavjagritisanstha",
+            },
+            {
+              label: FaInstagram,
+              href: "https://www.instagram.com/manavjagritisanstha/",
+            },
+            {
+              label: FaWhatsapp,
+              href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+            },
+          ].map((obj, idx) => (
             <Link
+              href={obj.href}
+              target="_blank"
+              rel="noopener noreferrer"
               key={idx}
-              href={social.href}
-              title={social.title}
-              className="w-9 h-9 rounded-full bg-[#D4A017]/10 border border-[#D4A017]/20 flex items-center justify-center text-[#F4D28C]/60 text-sm hover:bg-[#D4A017]/20 hover:text-[#F4D28C] hover:scale-105 transition duration-300"
+              className="w-9 h-9 rounded-full bg-white border border-[#D4A017]/30 flex items-center justify-center text-[#A63D00] hover:bg-[#D4A017] hover:text-white transition cursor-pointer shadow-sm"
             >
-              {social.label}
+              <obj.label size={16} />
             </Link>
           ))}
         </div>

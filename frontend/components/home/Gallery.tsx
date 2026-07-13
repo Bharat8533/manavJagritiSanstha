@@ -13,106 +13,91 @@ export default function PhotoGallery() {
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
-      image:
-        "https://instagram.fagr4-2.fna.fbcdn.net/v/t51.82787-15/548160742_18398723110142950_7330375959353423729_n.webp?_nc_cat=100&ig_cache_key=MzcyMjY5NjU1MjE1OTg4NDA3MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=1QU54I1uybEQ7kNvwF48BEk&_nc_oc=AdqfoRxXpQH_UwthKoRcDpyPexBkRiT3h9_T7xIcyj_OPC1yRNsnH_6UTG26m1gchOIhHBnh_dpQhTiftrs-b2Q2&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-2.fna&_nc_gid=aoaMppFdWV16fowteM8EMw&_nc_ss=7a22e&oh=00_Af4GxpqGZqKThD9xZ2ai3I3iYxxFv5n3NlPB8mwuG24MBA&oe=6A164C8B",
+      image: "/images/1003350058.jpg.jpeg",
       caption: "Gau Mata Seva Camp 2024",
-      aspectClass: "aspect-[3/4]", // Tall portrait
+      aspectClass: "aspect-[3/4]",
     },
     {
       id: 2,
-      image:
-        "https://instagram.fagr4-1.fna.fbcdn.net/v/t51.82787-15/544339379_18398004787142950_299860759022312632_n.webp?_nc_cat=106&ig_cache_key=MzcxOTQzMTY1MDQ4NTk0OTg1OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=mKXYa8iUwA4Q7kNvwEPndyF&_nc_oc=AdpdlLPU3eTci_tlk_P8eNni4o_98kXqFXlSXZYeFXn3_fyV9h-J_la8VdblOwElV59s_eqdhWYjm09ZhttOc4TO&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-1.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af72j5H2Zu1iU41Zasc9PWjPnJjUbOWh6in6zyACzQhJYg&oe=6A164F7E",
+      image: "/images/1003350059.jpg.jpeg",
       caption: "Vrindavan Temple Darshan",
       aspectClass: "aspect-[2/3]", // Extra tall portrait
     },
     {
       id: 3,
-      image:
-        "https://instagram.fagr4-3.fna.fbcdn.net/v/t51.82787-15/543817332_18397059790142950_6929721432092178225_n.webp?_nc_cat=103&ig_cache_key=MzcxMzU0MTE2MTc2MTA5MTM2Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tW1oeo5h84sQ7kNvwEtkBdx&_nc_oc=AdrLxtz_74zNqHWDw7xCXksLGcdbpUzcR4_4IBRHbNrW1XPD_8AoH1IBSf9MeAj0XcbvM0zl1skFW-qv0I6rYZWT&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-3.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af60JCCe0drz_jmIObNRDCVeH4O1EvObZ_xSC7NtuwF2rQ&oe=6A1669A8",
+      image: "/images/1003350060.jpg.jpeg",
       caption: "Maharaj Ji Katha",
       aspectClass: "aspect-square", // Square
     },
     {
       id: 4,
-      image:
-        "https://instagram.fagr4-3.fna.fbcdn.net/v/t51.82787-15/543098876_18398004712142950_2516161536629103282_n.webp?_nc_cat=103&ig_cache_key=MzcxOTQzMTY1MDQ4NTk3NjMyNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=MaUqKYkxmUkQ7kNvwEUQ_hT&_nc_oc=AdoUhkGKtwJfqqfiwgIoRxl0W00ZELGUTM8qBd9SXyGicc79O0AFXAwzFI5AJr-rYm3j9eRb0VeZUyGrvFXxw5v_&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-3.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af4Zzf0di6nONe0WvMFz7rBCgu9ApBDQSrhOj20n1RmLcg&oe=6A165D20",
+      image: "/images/1003350061.jpg.jpeg",
       caption: "Temple Restoration",
       aspectClass: "aspect-[3/4]", // Tall portrait
     },
     {
       id: 5,
-      image:
-        "https://instagram.fagr4-3.fna.fbcdn.net/v/t51.82787-15/546585426_18398370199142950_8540375082582474165_n.webp?_nc_cat=104&ig_cache_key=MzcyMDU0OTI1NDQ3MDUzMzQ5OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=kIgNCepNnDYQ7kNvwFJUe-Z&_nc_oc=AdqJaNaP6gEHe90nq6dVNrYT639QQDc3SVKBJe2EihSWWGxJL8hPWUiUpcR2MYeGt96xA05wW3ZrIkaS8IjFU5Ok&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-3.fna&_nc_gid=aoaMppFdWV16fowteM8EMw&_nc_ss=7a22e&oh=00_Af5beXxuPbCcV7n9NWQ0vGacDPi7MprO40f2D5cNvbGbPQ&oe=6A1645C2",
+      image: "/images/1003684925.jpg.jpeg",
       caption: "Yamuna Aarti Vrindavan",
       aspectClass: "aspect-[4/5]", // Intermediate vertical height
     },
     {
       id: 6,
-      image:
-        "https://instagram.fagr4-2.fna.fbcdn.net/v/t51.82787-15/545268777_18398370307142950_892723422985652207_n.webp?_nc_cat=109&ig_cache_key=MzcyMDU0OTI1NDY0NjY5MjQwMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Ziwai-YQx_YQ7kNvwFXg7yz&_nc_oc=AdpmIgBQ7ww7Q_MTUcrbn7AYJ5Qyo33bHj7GHNHH4spDUU-XdFh6uSmOkXfj_qNc8pNjT4VNfzzJrHMN-7vvgY5G&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-2.fna&_nc_gid=aoaMppFdWV16fowteM8EMw&_nc_ss=7a22e&oh=00_Af7r8V0NBymIENs4Qrb2zNfJbRSELtI9QtWAYS-VGtE-oQ&oe=6A164814",
+      image: "/images/1003821021.jpg.jpeg",
       caption: "Devotees at Ashram",
       aspectClass: "aspect-[2/3]", // Extra tall portrait
     },
     {
       id: 7,
-      image:
-        "https://instagram.fagr4-3.fna.fbcdn.net/v/t51.82787-15/543817332_18397059790142950_6929721432092178225_n.webp?_nc_cat=103&ig_cache_key=MzcxMzU0MTE2MTc2MTA5MTM2Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tW1oeo5h84sQ7kNvwEtkBdx&_nc_oc=AdrLxtz_74zNqHWDw7xCXksLGcdbpUzcR4_4IBRHbNrW1XPD_8AoH1IBSf9MeAj0XcbvM0zl1skFW-qv0I6rYZWT&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-3.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af60JCCe0drz_jmIObNRDCVeH4O1EvObZ_xSC7NtuwF2rQ&oe=6A1669A8",
+      image: "/images/IMG_20250823_220426.jpg.jpeg",
       caption: "Evening Bhajan Sandhya",
       aspectClass: "aspect-square",
     },
     {
       id: 8,
-      image:
-        "https://instagram.fagr4-2.fna.fbcdn.net/v/t51.82787-15/548160742_18398723110142950_7330375959353423729_n.webp?_nc_cat=100&ig_cache_key=MzcyMjY5NjU1MjE1OTg4NDA3MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=1QU54I1uybEQ7kNvwF48BEk&_nc_oc=AdqfoRxXpQH_UwthKoRcDpyPexBkRiT3h9_T7xIcyj_OPC1yRNsnH_6UTG26m1gchOIhHBnh_dpQhTiftrs-b2Q2&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-2.fna&_nc_gid=aoaMppFdWV16fowteM8EMw&_nc_ss=7a22e&oh=00_Af4GxpqGZqKThD9xZ2ai3I3iYxxFv5n3NlPB8mwuG24MBA&oe=6A164C8B",
+      image: "/images/IMG-20250518-WA0269.jpg.jpeg",
       caption: "Seva In Action",
       aspectClass: "aspect-[3/4]",
     },
     {
       id: 9,
-      image:
-        "https://instagram.fagr4-3.fna.fbcdn.net/v/t51.82787-15/543098876_18398004712142950_2516161536629103282_n.webp?_nc_cat=103&ig_cache_key=MzcxOTQzMTY1MDQ4NTk3NjMyNA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=MaUqKYkxmUkQ7kNvwEUQ_hT&_nc_oc=AdoUhkGKtwJfqqfiwgIoRxl0W00ZELGUTM8qBd9SXyGicc79O0AFXAwzFI5AJr-rYm3j9eRb0VeZUyGrvFXxw5v _&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-3.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af4Zzf0di6nONe0WvMFz7rBCgu9ApBDQSrhOj20n1RmLcg&oe=6A165D20",
+      image: "/images/IMG-20250723-WA0073(1).jpg.jpeg",
       caption: "Sacred Shrines",
       aspectClass: "aspect-[2/3]",
     },
     {
       id: 10,
-      image:
-        "https://instagram.fagr4-1.fna.fbcdn.net/v/t51.82787-15/544339379_18398004787142950_299860759022312632_n.webp?_nc_cat=106&ig_cache_key=MzcxOTQzMTY1MDQ4NTk0OTg1OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=mKXYa8iUwA4Q7kNvwEPndyF&_nc_oc=AdpdlLPU3eTci_tlk_P8eNni4o_98kXqFXlSXZYeFXn3_fyV9h-J_la8VdblOwElV59s_eqdhWYjm09ZhttOc4TO&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-1.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af72j5H2Zu1iU41Zasc9PWjPnJjUbOWh6in6zyACzQhJYg&oe=6A164F7E",
+      image: "/images/IMG-20260427-WA0104.jpg.jpeg",
       caption: "Parikrama Moments",
       aspectClass: "aspect-square",
     },
     {
       id: 11,
-      image:
-        "https://instagram.fagr4-3.fna.fbcdn.net/v/t51.82787-15/546585426_18398370199142950_8540375082582474165_n.webp?_nc_cat=104&ig_cache_key=MzcyMDU0OTI1NDQ3MDUzMzQ5OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=kIgNCepNnDYQ7kNvwFJUe-Z&_nc_oc=AdqJaNaP6gEHe90nq6dVNrYT639QQDc3SVKBJe2EihSWWGxJL8hPWUiUpcR2MYeGt96xA05wW3ZrIkaS8IjFU5Ok&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-3.fna&_nc_gid=aoaMppFdWV16fowteM8EMw&_nc_ss=7a22e&oh=00_Af5beXxuPbCcV7n9NWQ0vGacDPi7MprO40f2D5cNvbGbPQ&oe=6A1645C2",
+      image: "/images/IMG-20260428-WA0100.jpg.jpeg",
       caption: "Holy Yamuna Waters",
       aspectClass: "aspect-[4/5]",
     },
     {
       id: 12,
-      image:
-        "https://instagram.fagr4-2.fna.fbcdn.net/v/t51.82787-15/545268777_18398370307142950_892723422985652207_n.webp?_nc_cat=109&ig_cache_key=MzcyMDU0OTI1NDY0NjY5MjQwMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Ziwai-YQx_YQ7kNvwFXg7yz&_nc_oc=AdpmIgBQ7ww7Q_MTUcrbn7AYJ5Qyo33bHj7GHNHH4spDUU-XdFh6uSmOkXfj_qNc8pNjT4VNfzzJrHMN-7vvgY5G&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-2.fna&_nc_gid=aoaMppFdWV16fowteM8EMw&_nc_ss=7a22e&oh=00_Af7r8V0NBymIENs4Qrb2zNfJbRSELtI9QtWAYS-VGtE-oQ&oe=6A164814",
+      image: "/images/IMG-20260423-WA0164.jpg.jpeg",
       caption: "Ashram Daily Prayer",
       aspectClass: "aspect-[3/4]",
     },
     {
       id: 13,
-      image:
-        "https://instagram.fagr4-3.fna.fbcdn.net/v/t51.82787-15/543817332_18397059790142950_6929721432092178225_n.webp?_nc_cat=103&ig_cache_key=MzcxMzU0MTE2MTc2MTA5MTM2Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=tW1oeo5h84sQ7kNvwEtkBdx&_nc_oc=AdrLxtz_74zNqHWDw7xCXksLGcdbpUzcR4_4IBRHbNrW1XPD_8AoH1IBSf9MeAj0XcbvM0zl1skFW-qv0I6rYZWT&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-3.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af60JCCe0drz_jmIObNRDCVeH4O1EvObZ_xSC7NtuwF2rQ&oe=6A1669A8",
+      image: "/images/IMG-20260423-WA0175.jpg.jpeg",
       caption: "Spiritual Discourse",
       aspectClass: "aspect-[2/3]",
     },
     {
       id: 14,
-      image:
-        "https://instagram.fagr4-1.fna.fbcdn.net/v/t51.82787-15/544339379_18398004787142950_299860759022312632_n.webp?_nc_cat=106&ig_cache_key=MzcxOTQzMTY1MDQ4NTk4OTg1OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=mKXYa8iUwA4Q7kNvwEPndyF&_nc_oc=AdpdlLPU3eTci_tlk_P8eNni4o_98kXqFXlSXZYeFXn3_fyV9h-J_la8VdblOwElV59s_eqdhWYjm09ZhttOc4TO&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-1.fna&_nc_gid=vvWxsT_LKVykoaJSafvTOQ&_nc_ss=7a22e&oh=00_Af72j5H2Zu1iU41Zasc9PWjPnJjUbOWh6in6zyACzQhJYg&oe=6A164F7E",
+      image: "/images/IMG-20260424-WA0227.jpg.jpeg",
       caption: "Temple Architecture",
       aspectClass: "aspect-square",
     },
     {
       id: 15,
-      image:
-        "https://instagram.fagr4-2.fna.fbcdn.net/v/t51.82787-15/548160742_18398723110142950_7330375959353423729_n.webp?_nc_cat=100&ig_cache_key=MzcyMjY5NjU1MjE1OTg4NDA3MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=1QU54I1uybEQ7kNvwF48BEk&_nc_oc=AdqfoRxXpQH_UwthKoRcDpyPexBkRiT3h9_T7xIcyj_OPC1yRNsnH_6UTG26m1gchOIhHBnh_dpQhTiftrs-b2Q2&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=instagram.fagr4-2.fna&_nc_gid=aoaMppFdWV16fowteM8EMw&_nc_ss=7a22e&oh=00_Af4GxpqGZqKThD9xZ2ai3I3iYxxFv5n3NlPB8mwuG24MBA&oe=6A164C8B",
+      image: "/images/IMG-20260423-WA0160.jpg.jpeg",
       caption: "Gau Seva Camp",
       aspectClass: "aspect-[4/5]",
     },
@@ -163,9 +148,6 @@ export default function PhotoGallery() {
             </div>
           ))}
         </div>
-
-        {/* View All CTA Link Footer */}
-        <Button title={"Explore Full Collection"} navUrl={"/gallery"} />
       </div>
     </section>
   );

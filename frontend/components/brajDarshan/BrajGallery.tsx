@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export default function BrajGallery() {
+  const t = useTranslations("BrajGallery");
   const galleryItems = [
     {
       title: "श्री गोवर्धन पर्वत",
@@ -75,10 +77,10 @@ export default function BrajGallery() {
       {/* Header */}
       <div className="text-center mb-12">
         <span className="text-[10px] font-sans font-black text-[#D4A017] uppercase tracking-[0.25em] block mb-2">
-          Darshan Hub
+          {t("heading")}
         </span>
         <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#3D2511] tracking-wide">
-          दिव्य ब्रज दर्शन गैलरी
+          {t("p")}
         </h2>
         <div className="w-12 h-[1.5px] bg-[#D4A017] mx-auto mt-3" />
       </div>

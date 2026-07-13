@@ -1,96 +1,85 @@
+"use client";
+
 import React from "react";
-
-export interface StatItem {
-  metric: string;
-  label: string;
-  detail: string;
-}
-
-const IMPACT_STATS: StatItem[] = [
-  {
-    metric: "5,00+",
-    label: "आश्रित गऊ माताएं",
-    detail:
-      "वृंदावन धाम एवं आसपास के क्षेत्रों में निरंतर चिकित्सा एवं पोषण संवर्धन",
-  },
-  {
-    metric: "10+ Tons",
-    label: "मासिक हरा चारा",
-    detail: "उच्च पौष्टिक आहार, सुचारू वितरण व्यवस्था एवं दैनिक सेवा प्रबंधन",
-  },
-  {
-    metric: "24/7",
-    label: "चिकित्सा एम्बुलेंस",
-    detail: "पीड़ित एवं बीमार गौवंश की त्वरित सहायता हेतु समर्पित डॉक्टर्स टीम",
-  },
-  {
-    metric: "25+ Years",
-    label: "अविरल सेवा काल",
-    detail: "सनातन धर्म के सेवा संकल्प के तहत निरंतर नि:स्वार्थ धरातलीय कार्य",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function GauSevaImpact(): React.JSX.Element {
+  const t = useTranslations("GauSevaImpact");
+
+  // Fetch stats array from JSON
+  const stats = t.raw("stats") as {
+    metric: string;
+    label: string;
+    detail: string;
+  }[];
+
   return (
-    <section
-      className="py-12 bg-[#1E0F0A] relative overflow-hidden"
-      id="impact"
-    >
-      {/* Background Ambient Glow Effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-[#A63D00]/10 rounded-full blur-[120px] pointer-events-none" />
+    <>
+      <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradient-bg { animation: gradientShift 10s ease infinite; }
+      `}</style>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <span className="inline-block text-[10px] font-bold tracking-[0.2em] uppercase text-[#F4D28C] bg-[#F4D28C]/5 border border-[#F4D28C]/10 px-3 py-1.5 rounded-full">
-            OUR MISSION IN NUMBERS
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            सेवा और{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#F4D28C] to-[#E5B869]">
-              समर्पण का धरातल
+      <section
+        className="py-16 relative overflow-hidden bg-gradient-to-br from-[#A63D00] via-[#D4A017] to-[#A63D00] bg-[length:200%_200%] animate-gradient-bg"
+        id="impact"
+      >
+        <div className="absolute inset-0 opacity-[0.15] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Header Section */}
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-6">
+            <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-white bg-white/20 backdrop-blur-md border border-white/30 px-4 py-2 rounded-full shadow-sm">
+              {t("badge")}
             </span>
-          </h2>
-          <p className="text-xs sm:text-sm text-white/60 max-w-xl mx-auto font-light leading-relaxed">
-            आपके सहयोग और अटूट विश्वास से मानव जाग्रती संस्था द्वारा संचालित
-            वास्तविक जमीनी प्रयास
-          </p>
-          <div className="w-12 h-[2px] bg-[#F4D28C]/30 mx-auto mt-4" />
-        </div>
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-white tracking-tight drop-shadow-sm">
+              {t("heading")}
+            </h2>
+            <p className="text-white/90 text-sm sm:text-base max-w-xl mx-auto font-medium leading-relaxed">
+              {t("description")}
+            </p>
+            <div className="w-20 h-1 rounded-full mx-auto bg-white/40" />
+          </div>
 
-        {/* Impact Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
-          {IMPACT_STATS.map((stat, i) => (
-            <div
-              key={i}
-              className="group relative p-8 rounded-2xl bg-gradient-to-b from-white/[0.04] to-transparent border border-white/[0.06] hover:border-[#F4D28C]/30 text-center backdrop-blur-md transition-all duration-500 ease-out hover:-translate-y-1.5 select-none overflow-hidden"
-            >
-              {/* Subtle Dynamic Index Watermark */}
-              <span className="absolute -top-4 -right-2 text-8xl font-sans font-black text-white/[0.02] transition-colors duration-500 group-hover:text-[#F4D28C]/[0.03]">
-                0{i + 1}
-              </span>
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+            {stats.map((stat, i) => (
+              <div
+                key={i}
+                className="group relative p-8 rounded-3xl bg-white/85 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.1)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.2)] transition-all duration-500 ease-out hover:-translate-y-2 text-center overflow-hidden"
+              >
+                <span className="absolute -top-6 -right-2 text-8xl font-sans font-black text-[#A63D00]/5 select-none pointer-events-none">
+                  0{i + 1}
+                </span>
 
-              {/* Stat Metric (Standard Readable English Numbers) */}
-              <div className="font-sans text-4xl lg:text-5xl font-extrabold text-[#F4D28C] tracking-tight transition-transform duration-500 group-hover:scale-105">
-                {stat.metric}
+                <div className="relative z-10">
+                  <div
+                    className="font-sans text-4xl font-extrabold mb-4 tracking-tight"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to bottom right, #A63D00, #D4A017)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    {stat.metric}
+                  </div>
+                  <h3 className="text-lg font-bold text-stone-900 mb-3 group-hover:text-[#A63D00] transition-colors duration-300">
+                    {stat.label}
+                  </h3>
+                  <p className="text-stone-600 text-sm leading-relaxed font-medium">
+                    {stat.detail}
+                  </p>
+                </div>
               </div>
-
-              {/* Label */}
-              <div className="text-sm font-semibold text-white tracking-wide mt-4 mb-2 transition-colors duration-300 group-hover:text-[#F4D28C]">
-                {stat.label}
-              </div>
-
-              {/* Detail Description */}
-              <p className="text-xs text-white/50 font-light leading-relaxed group-hover:text-white/70 transition-colors duration-300">
-                {stat.detail}
-              </p>
-
-              {/* Top Neon Glow Border Indicator */}
-              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#F4D28C]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -8,9 +8,9 @@ const BlogHero = () => {
       {/* Immersive Full-Bleed Background Image & Advanced Grading Context */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
-          src="https://mjsvrindavan.com/wp-content/uploads/2024/07/slide3.webp"
+          src="https://images.trvl-media.com/place/6330856/af12b36f-09d7-4bfb-a824-81a43b018517.jpg"
           alt="Sacred Vrindavan Background"
-          className="w-full h-full object-cover object-center transform scale-102"
+          className="w-full h-full object-cover object-top"
         />
 
         {/* Layer 1: Saffron & Maroon Blend with Opacity for transparency */}
@@ -54,7 +54,7 @@ const BlogHero = () => {
 
         {/* Balanced Description Layer */}
         <p className="text-xs sm:text-sm lg:text-base text-white/80 font-light leading-relaxed max-w-2xl mx-auto px-2">
-          पूज्य श्री निम्बार्क ब्रजराज जी महाराज के अमृतमयी दिव्य प्रवचन, संतों
+          श्री निम्बार्क पूज्य आचार्य ब्रजराज जी महाराज के अमृतमयी दिव्य प्रवचन, संतों
           की पावन अनुभूतियां, सनातन धर्म के गहरे रहस्य और मानव जाग्रती संस्था के
           निरंतर चल रहे सेवा प्रकल्पों का आधिकारिक संकलन।
         </p>

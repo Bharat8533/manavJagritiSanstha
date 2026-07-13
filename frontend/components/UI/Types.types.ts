@@ -18,10 +18,11 @@ export interface GauSevaHeroProps {
 export interface PlanType {
   id: string;
   title: string;
-  amount: number;
+  amount: number | string;
   desc: string;
   badge: string;
-  isFeatured?: boolean;
+  isFeatured?: boolean | string | undefined;
+  isCustomAmount?: number | string | boolean;
 }
 
 export interface DonorInfoType {
@@ -42,6 +43,7 @@ export interface DonorFormModalProps {
 }
 
 export interface GauSevaPlansProps {
+  plans: PlanType[];
   selectedPlan: PlanType | null;
   customAmount: number;
   setCustomAmount: Dispatch<SetStateAction<number>>;
@@ -119,13 +121,51 @@ export interface CauseType {
 }
 
 export interface BlogPost {
-  id: number;
-  category: string;
+  // Essential Fields (Backend se aa rahe hain)
+  id: string | number;
   title: string;
-  excerpt: string;
+  category: string;
   content: string;
-  date: string;
-  readTime: string;
-  image: string;
-  featured: boolean;
+  imageUrl: string;
+  publishDate: string;
+  author: string;
+  likes: string | number;
+  status: string;
+
+  // Optional Fields (Handling extra/conditional data)
+  videoUrl?: string | null;
+  uploadedVideoUrl?: string | null;
+
+  // UI Specific Fields (Component ke andar map karne ke liye)
+  excerpt?: string;
+  readTime?: string;
+  featured?: boolean;
+}
+
+export interface BlogsViewProps {
+  posts: BlogPost[];
+  onAddPost: (newPost: BlogPost) => void;
+}
+
+export interface ContactQuery {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+  receivedDate: string;
+  status: "Pending" | "Resolved";
+  seva_interest: string;
+  created_at: string;
+}
+
+export interface AdminProfile {
+  name: string;
+  email: string;
+  phone: string;
+  role: string;
+  designation: string;
+  avatarUrl: string;
+  joinedDate: string;
 }

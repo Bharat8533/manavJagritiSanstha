@@ -14,8 +14,9 @@ export default function DonorFormModal({
 }: DonorFormModalProps): React.JSX.Element | null {
   if (!isOpen) return null;
 
-  const displayAmount : number = selectedPlan?.amount || customAmount || 0;
-
+const displayAmount: number =
+  Number(selectedPlan?.amount) || Number(customAmount) || 0;
+  
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 overflow-hidden animate-[fadeIn_0.2s_ease-out]">
       {/* Absolute Blurred Shroud Overlay */}

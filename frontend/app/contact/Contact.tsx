@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import ContactDetails from "@/components/contact/ContactDetails";
 import ContactForm from "@/components/contact/ContactForm";
 import GoogleMap from "@/components/contact/GoogleMap";
+import { sendUserContactQuery } from "@/services/user.services";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactPage() {
   // Pure UI form ki centralized state
@@ -26,31 +28,37 @@ export default function ContactPage() {
   };
 
   // Form submission orchestrator logic
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    console.log("Submitting form data directly from ContactPage:", formState);
-    
-    // Yahan aap apni API call inject kar sakte hain:
-    // await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formState) })
 
-    setSubmitted(true);
-    
-    // Form reset logic state updates ke saath
-    setFormState({
-      name: "",
-      email: "",
-      phone: "",
-      sevaInterest: "सामान्य पूछताछ",
-      message: "",
-    });
+    try {
+      const response = await sendUserContactQuery(formState);
 
-    setTimeout(() => setSubmitted(false), 4000);
+      if (response && response.status) {
+        toast.success(response.message || "संदेश सफलतापूर्वक भेजा गया!");
+        setSubmitted(true);
+
+        setFormState({
+          name: "",
+          email: "",
+          phone: "",
+          sevaInterest: "सामान्य पूछताछ",
+          message: "",
+        });
+
+        setTimeout(() => setSubmitted(false), 4000);
+      } else {
+        toast.error(response.message || "संदेश भेजने में त्रुटि आई।");
+      }
+    } catch (err) {
+      console.error("Submission Error:", err);
+      toast.error("सर्वर से संपर्क नहीं हो पाया।");
+    }
   };
 
   return (
     <div className="bg-[#FCFAF5] min-h-screen text-[#2C1810] selection:bg-[#A63D00]/10 antialiased">
-      
+      <Toaster position="top-right" />
       {/* 1. HERO SECTION */}
       <section className="relative pt-28 pb-16 px-6 md:px-12 max-w-[1400px] mx-auto text-center">
         <div className="max-w-3xl mx-auto space-y-4">

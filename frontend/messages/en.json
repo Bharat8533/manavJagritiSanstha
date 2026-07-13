@@ -1,0 +1,453 @@
+{
+  "About": {
+    "badge": "🚩 From the holy land of Shree Dham Vrindavan...",
+    "guruTitles": "Sanatan Kranti Agradoot • International Sanatan Dharma Preacher • Gau Govardhan Upasak • Nand-Yashoda Vrindavan Peethadhishwar",
+    "guruName": "Pujya Acharya Shree Brajraj Ji Maharaj",
+    "guruDesc": "A soulful Sankirtanist, compassionate humanist, and the pride of the Shree Nimbark Sampradaya. A devoted follower of Shree Radha Sarveshwar, whose nectarous Bhagavata Katha and humility are awakening the hearts of millions of devotees.",
+    "sectionTag": "Humanitarian Organization & Service Institution",
+    "mainTitle": "Manav Jagriti Sanstha",
+    "subTitle": "Manav Jagriti Sanstha – Vrindavan",
+    "introText": "Manav Jagriti Sanstha is dedicated to continuous social welfare through various great and holy disciplines in Braj Bhoomi. From serving saints to protecting mute animals and conserving the environment, this organization keeps our ancient Sanatan and traditional values alive while meeting contemporary needs.",
+    "ctaButton": "🙏 Join this sacred service",
+    "services": {
+      "s1": {
+        "title": "Sant Bhojan Seva",
+        "desc": "Offering daily food Prasad to the saints and Vaishnavas residing in the holy Dham."
+      },
+      "s2": {
+        "title": "Gau Seva and Puja",
+        "desc": "Daily service, medical care, and sustenance for the divine Mother Cow, the pillar of Sanatan culture."
+      },
+      "s3": {
+        "title": "Yamuna Cleanliness Campaign",
+        "desc": "Ground-level initiatives to maintain the purity and cleanliness of the holy river Yamuna."
+      },
+      "s4": {
+        "title": "Monkey Feeding Service",
+        "desc": "Providing fruits, chickpeas, and proper food to the monkeys of Vrindavan, who are considered manifestations of Lord Hanuman."
+      },
+      "s5": {
+        "title": "Old Age Home Operations",
+        "desc": "A loving shelter for helpless elderly, ensuring their residence, food, and medical care."
+      }
+    }
+  },
+  "Subscription": {
+    "heading": "Sacred Membership Plans",
+    "p": "Choose the path that resonates with your devotion and support our mission."
+  },
+  "Testimonial": {
+    "heading": "What our devotees are saying about Manav Jagriti Sanstha",
+    "p": "Join our community of compassionate souls and witness the transformative power of our organization.  "
+  },
+  "Blogs": {
+    "heading": "Pravachan & Sacred Blogs",
+    "p": "Spiritual Wisdom"
+  },
+  "CtaSection": {
+    "subheading": "Become a Volunteer",
+    "heading": "Become a partner in the service works of Manav Jagriti Sanstha",
+    "p": "Contact us to connect with Pujya Acharya Shree Brajraj Ji Maharaj or to arrange any kind of Katha or Puja rituals."
+  },
+  "DonationServices": {
+    "badge": "Our Sacred Causes",
+    "heading": "Choose Your Divine Service",
+    "description": "Every act of giving is a prayer answered. Select a cause close to your heart and become part of something eternal.",
+    "services": {
+      "gau": {
+        "label": "Gau Mata",
+        "badge": "Monthly Seva",
+        "title": "Gau Seva",
+        "hindi": "गौ सेवा",
+        "desc": "Feed and care for holy cows. Your contribution provides nutritious food, medical care, and shelter to thousands of Gau Mata daily.",
+        "cta": "Donate for Gau Seva"
+      },
+      "katha": {
+        "label": "Maharaj Ji",
+        "title": "Katha Booking",
+        "hindi": "कथा बुकिंग",
+        "desc": "Bring divine blessings to your home. Book Maharaj Ji's sacred Katha for weddings, poojas, birth ceremonies, and spiritual gatherings.",
+        "cta": "Book a Katha"
+      },
+      "yatra": {
+        "label": "Braj Yatra",
+        "badge": "Limited Seats",
+        "title": "Braj Yatra",
+        "hindi": "ब्रज यात्रा",
+        "desc": "Journey to the sacred land of Krishna — Vrindavan, Mathura, Govardhan. A soul-transforming pilgrimage with Maharaj Ji's blessings.",
+        "cta": "Register for Yatra"
+      },
+      "kavach": {
+        "label": "Narayan Kavach",
+        "title": "Narayan Kavach",
+        "hindi": "नारायण कवच",
+        "desc": "Sacred divine protection. The authentic Narayan Kavach consecrated by Maharaj Ji — shield your family with celestial blessings.",
+        "cta": "Get Narayan Kavach"
+      },
+      "temple": {
+        "label": "Temple Seva",
+        "title": "Temple Restoration",
+        "hindi": "देवमंदिर जीर्णोद्धार",
+        "desc": "Restore ancient temples to their divine glory. Preserve sacred heritage for generations. Your brick is someone's salvation.",
+        "cta": "Support Restoration"
+      },
+      "donate": {
+        "label": "General Seva",
+        "badge": "All Causes",
+        "title": "General Donation",
+        "hindi": "सामान्य दान",
+        "desc": "Support all our sacred causes. From Anna Daan to education, your general donation reaches where it is needed most.",
+        "cta": "Donate Freely"
+      }
+    }
+  },
+  "Timeline": {
+    "header": "Our Sacred Journey",
+    "sub": "Our Journey",
+    "desc": "A chronicle of devotion, service, and divine grace.",
+    "footer": "Present Day & Beyond",
+    "events": {
+      "1": {
+        "hindi": "Foundation",
+        "title": "Foundation of Sanstha",
+        "desc": "The foundation of Manav Jagriti Sanstha was laid with the main objective of initiating spiritual consciousness and public welfare in society.",
+        "milestone": "Sanstha Foundation",
+        "detail": "Sacred Beginning"
+      },
+      "2": {
+        "hindi": "Vedic Education",
+        "title": "Sanatan Vedic Shiksha Jagriti",
+        "desc": "A special awareness campaign was started to bring the education of basic principles of Sanatan Dharma, Vedas, and ancient Indian culture to every person.",
+        "milestone": "Spiritual Awareness",
+        "detail": "Vedic Education"
+      },
+      "3": {
+        "hindi": "De-Addiction",
+        "title": "De-Addiction Campaign",
+        "desc": "A large-scale de-addiction movement was started from Mumbai, which liberated thousands of youths from drug addiction and brought them into the mainstream.",
+        "milestone": "De-Addiction Movement",
+        "detail": "Mumbai Division"
+      },
+      "4": {
+        "hindi": "Save Girl Child",
+        "title": "Female Foeticide Awareness",
+        "desc": "A comprehensive social awareness campaign was launched from Punjab against 'Save the Girl Child' and female foeticide, which brought a major change in society.",
+        "milestone": "Save the Girl Child",
+        "detail": "Punjab Division"
+      },
+      "5": {
+        "hindi": "Anti-Dowry",
+        "title": "Anti-Dowry Campaign",
+        "desc": "A major movement was started from Rajasthan for the complete eradication of social evils like dowry and to promote simple marriages without dowry.",
+        "milestone": "Eradicating Dowry",
+        "detail": "Rajasthan Division"
+      },
+      "6": {
+        "hindi": "Anti-Child Marriage",
+        "title": "Anti-Child Marriage Campaign",
+        "desc": "Social and legal awareness was spread against the marriage of minors, and many child marriages were successfully stopped.",
+        "milestone": "Protecting Childhood",
+        "detail": "Social Reformation"
+      },
+      "7": {
+        "hindi": "Sisters Rehab",
+        "title": "Remarriage of Child Widows/Sisters",
+        "desc": "A highly humanitarian campaign was started in Bihar for the remarriage and social rehabilitation of sisters suffering from the consequences of child marriage.",
+        "milestone": "Sisters Rehabilitation",
+        "detail": "Bihar Division"
+      },
+      "8": {
+        "hindi": "Water Seva",
+        "title": "Sacred Water Seva",
+        "desc": "Pure drinking water and sacred water service sites were established for the general public and travelers in pilgrimage areas and rural regions.",
+        "milestone": "Pawan Seva Project",
+        "detail": "Water Resources Seva"
+      },
+      "9": {
+        "hindi": "Anti-Cow Slaughter",
+        "title": "Anti-Cow Slaughter Campaign",
+        "desc": "A nationwide consciousness chariot journey and peaceful movements were started for the protection, promotion of Gau Mata, and complete opposition to illegal cattle smuggling.",
+        "milestone": "Gau Raksha Movement",
+        "detail": "Protecting Gau Mata"
+      },
+      "10": {
+        "hindi": "Sick Cow Seva",
+        "title": "Helpless & Sick Cow Seva",
+        "desc": "Ambulances, medical camps, and special cow shelters were built for the treatment of sick, terminally ill, injured, and stray cows.",
+        "milestone": "Teerth Gau Shala",
+        "detail": "Medical Seva for Cows"
+      },
+      "11": {
+        "hindi": "Empowered India",
+        "title": "Empowered India Mission",
+        "desc": "A resolution was taken to structure a self-reliant and empowered India by connecting the youth of the country with nation-building, patriotism, and moral values.",
+        "milestone": "Sashakt Bharat Alok",
+        "detail": "Youth & Nation Building"
+      },
+      "12": {
+        "hindi": "Mass Marriage",
+        "title": "Mass Cairva-Jatiya Marriage",
+        "desc": "Mass inter-caste marriage events were started for daughters of economically weaker families, where weddings are solemnized with full traditional rituals.",
+        "milestone": "Kanya Vivah Campaign",
+        "detail": "Mass Wedding Services"
+      },
+      "13": {
+        "hindi": "Anti-Corruption",
+        "title": "Anti-Corruption & Employment Drive",
+        "desc": "A voice was raised against corruption, and work was started to provide employment opportunities to youth through skill development.",
+        "milestone": "Corruption Free Society",
+        "detail": "Social Transparency"
+      }
+    }
+  },
+  "GauSevaImportance": {
+    "subheading": "Sacred Mythological Context",
+    "heading": "The Spiritual and Sanatan Significance of Gau Seva",
+    "p": "The scriptures state that in this Kali Yuga, there is no sacrifice (Yajna) as accessible and rewarding as the service of the cow. Offering a morsel of food to Gau Mata naturally alleviates ancestral afflictions (Pitru Dosh), planetary obstacles (Navagraha Dosha), and all forms of mental distress. Residing in the sacred dust of Vrindavan, serving the helpless and destitute cows is the fundamental source of pleasing Thakur Shri Banke Bihari Ji.",
+    "philosophy": [
+      {
+        "verse": "Gavo Vishwasya Matarah.",
+        "source": "— Rigveda",
+        "meaning": "Cows are the mothers of the entire universe; the welfare of nature and humanity lies in their protection."
+      },
+      {
+        "verse": "Sarvadevamayi hi Gauh.",
+        "source": "— Padma Purana",
+        "meaning": "It is believed that all 330 million deities reside within the sacred form of the Divine Cow (Gau Mata)."
+      }
+    ]
+  },
+  "GauSevaImpact": {
+    "badge": "Our Mission in Numbers",
+    "heading": "Grounds of Service and Dedication",
+    "description": "Real-world ground efforts conducted by Manav Jagriti Sanstha through your support and unwavering trust.",
+    "stats": [
+      {
+        "metric": "500+",
+        "label": "Supported Gau Mata",
+        "detail": "Continuous medical care and nutritional support in Vrindavan Dham and surrounding areas."
+      },
+      {
+        "metric": "10+ Tons",
+        "label": "Monthly Green Fodder",
+        "detail": "High-nutritional diet, efficient distribution systems, and daily service management."
+      },
+      {
+        "metric": "24/7",
+        "label": "Medical Ambulance",
+        "detail": "Dedicated team of doctors for immediate assistance to suffering and sick cows."
+      },
+      {
+        "metric": "25+ Years",
+        "label": "Uninterrupted Service",
+        "detail": "Continuous selfless ground-level work under the service resolution of Sanatan Dharma."
+      }
+    ]
+  },
+  "GauSevaPlans": {
+    "subheading": "SANKALPA PORTAL",
+    "heading_part1": "Virtuous",
+    "heading_part2": "Ground Pledges",
+    "description": "Choose a sacred medium according to your capacity for the daily nourishment, medical care, and protection of helpless and sick cows sheltered in Vrindavan Dham.",
+    "trust_badge": "Direct Transparency Commitment",
+    "trust_desc": "Every rupee you contribute goes directly into the feeding and medical care operations of the Goshala. You are welcome to inspect your service at any time.",
+    "btn_label": "Sankalpa ✓",
+    "service_amount": "Service Amount",
+    "custom": {
+      "badge": "Voluntary Pledge",
+      "heading": "Swachha Sankalpa (Custom Pledge)",
+      "desc": "You can contribute to the Gau Seva fund by entering any custom amount of your choice. Your small offering is immensely helpful in the shelter and treatment of Gau Mata.",
+      "placeholder": "Enter custom amount",
+      "btn": "Contribute Now"
+    }
+  },
+  "KathaTypes": {
+    "badge": "Katha Options",
+    "heading_main": "Divine Katha Types",
+    "heading_sub": "Types of Divine Katha Organizers",
+    "description": "Under the guidance of Manav Jagriti Sanstha, you can choose the primary Katha from the sacred events listed below according to your faith and resolve.",
+    "select_text": "✓ Selected",
+    "select_prompt": "Click to select"
+  },
+  "KathaBookingForm": {
+    "heading": "Katha Booking Form",
+    "description": "Please submit the details of the main host and the potential Katha venue accurately.",
+    "success_msg": "Your pledge has been submitted. Our service manager will contact you soon. Ram Ram!",
+    "fields": {
+      "name": "Full Name of Main Host *",
+      "name_placeholder": "e.g., Shri Rajesh xxxx",
+      "phone": "Contact Number *",
+      "phone_placeholder": "e.g., +91 99999 xxxxx",
+      "date": "Tentative Start Date *",
+      "venue": "Katha Venue Options *",
+      "options": {
+        "vrindavan": "Sanstha Ashram (Vrindavan Dham)",
+        "home": "Personal Residence (Host's Region)",
+        "public": "Public Pandal / Marriage Hall"
+      },
+      "address": "Full Address for Katha Event *",
+      "address_placeholder": "Write full location including city, state, and pincode",
+      "notes": "Special Sankalpa or Additional Comments",
+      "notes_placeholder": "Mention any specific ritual, Saint Seva, or Brahmin Bhojan requests here...",
+      "submit": "Reserve Katha Date"
+    }
+  },
+  "KathaAmountInfo": {
+    "heading": "Essential Rules & Guidelines:",
+    "p1": "Vyaspith Protocols: Only Vedic Sanatan principles and narrations from authentic scriptures will be recited from the institute's Vyaspith (main podium).",
+    "p2": "Ashram Accommodation Policy: If the event is held at the Vrindavan Ashram, accommodation and satvik (pure) meals for the host's guests (up to 30 people) will be managed by the Ashram.",
+    "p3": "External Events: For events organized at private residences or public pandals, the host party must ensure convenient travel and satvik accommodation for the Vyas Ji (main narrator) and the musical team.",
+    "heading2": "Support & Inquiries",
+    "p4": "If you have any questions regarding date extensions, selection of the Vyas Peeth Acharya, or tax exemption (80G benefits) on donations, please feel free to contact us."
+  },
+  "UpcomingKathaPoster": {
+    "heading": "Upcoming Kathas"
+  },
+  "BrajDarshanMilestone": {
+    "heading": "Sacred Braj Pilgrimage Sites",
+    "p": "Holy Stops on the Divine Journey"
+  },
+  "YatraMotive": {
+    "p": "Our supreme resolve is to preserve the eternal and priceless heritage of Braj Mandal, where the divine Nikunj pastimes of Lord Shri Krishna continue to manifest even today.",
+    "subheading2": "Our Philosophy",
+    "headingquote1": "Sacred",
+    "headingquote2": "Objectives of the Yatra",
+    "motives": {
+      "1": {
+        "title": "Revival of Values & Cultural Heritage",
+        "desc": "To revive the timeless Sanatan values that are gradually fading in the modern world and reconnect the younger generation with their original cultural and Vedic roots."
+      },
+      "2": {
+        "title": "Environmental & Spiritual Preservation",
+        "desc": "To inspire devotion and reverence toward Braj's ancient forests, sacred ponds, and holy hills, ensuring the conservation and protection of this divine ecological heritage."
+      },
+      "3": {
+        "title": "Bhakti Yoga & Inner Purification",
+        "desc": "The primary purpose of this sacred 252-kilometer pilgrimage is not tourism, but the purification of the heart through Naam Sankirtan (devotional chanting) in the holy company of saints."
+      }
+    }
+  },
+  "YatraFacilities": {
+    "subheading": "How We Facilitate",
+    "heading": "Facilities Available for Devotees",
+    "p": "Ensuring a Safe and Spiritually Enriching Pilgrimage Experience",
+    "facilities": {
+      "1": {
+        "title": "Convenient Transportation (Transport Control)",
+        "desc": "Luggage transport services for pilgrims walking on foot, along with comfortable air-conditioned (AC) buses and vehicles specially arranged for elderly devotees."
+      },
+      "2": {
+        "title": "Sattvic Meals",
+        "desc": "Pure sattvic Braj Prasadam prepared with desi ghee under the guidance of saints, along with medicinal drinking water and timely refreshments throughout the pilgrimage."
+      },
+      "3": {
+        "title": "Sacred Accommodation (Vedic Camps)",
+        "desc": "Safe, clean, and spiritually uplifting ashrams and modern camps equipped with comfortable amenities for overnight stays during the pilgrimage."
+      },
+      "4": {
+        "title": "Medical Care & Safety",
+        "desc": "A dedicated first-aid team, ambulance backup, and security personnel accompany the pilgrimage to ensure prompt medical assistance and the safety of all devotees."
+      }
+    }
+  },
+  "BrajGallery": {
+    "heading": "Darshan Hub",
+    "p": "Divine Braj Darshan Gallery"
+  },
+  "BookingDesk": {
+    "subheading": "Central Secretariat",
+    "headingquote1": "Main Office &",
+    "headingquote2": "Contact Information Desk",
+    "p1": "Yatra Management Center",
+    "p2": "Gurukulam Braj Yatra Division",
+    "p3": "Raman Reti Road, Vrindavan, Mathura, Uttar Pradesh - 281121",
+    "p4": "Helpline Number (24x7)",
+    "formheading": "Digital Registration Department",
+    "formsubheading": "Fill out the registry records carefully for instant processing.",
+    "formname": "Full Name of Devotee",
+    "formnumber": "Mobile Number (WhatsApp)",
+    "formemail": "Email ID (Optional)",
+    "formyatramode1": "Divine Spiritual Journey (Walking - 21 Days)",
+    "formyatramode2": "Comfortable Vehicle Journey (By Car - 7 Days)",
+    "formtotalmembers": "Total Number of Members",
+    "formsubmit": "Complete Secure Digital Registration"
+  },
+  "TempleAboutConcept": {
+    "headingquote1": "Why is it Necessary",
+    "headingquote2": "to Restore Broken Temples?",
+    "p1": "Our ancient temples are not merely structures made of bricks and stones or ordinary places of worship; they are living centers of our magnificent art, history, advanced astronomical knowledge, and social consciousness.",
+    "p2": "When a sacred place is destroyed or neglected due to the harsh impacts of time, natural disasters, or narrow-minded ideologies, it is not just a building that is lost, but an invaluable chapter of our rich civilization and spiritual heritage is lost forever.",
+    "subheading1": "Preservation of Ancient Craftsmanship",
+    "subheading2": "Reconstruction without altering the original architectural design.",
+    "subheading3": "Cultural Awareness",
+    "subheading4": "Reconnecting the local community with daily prayers, rituals, and festivals.",
+    "footer": "There can be no greater human and spiritual endeavor than bringing back the sacred chants, temple bells, and Vedic mantras once again into the broken and silent places of worship."
+  },
+  "CoreMotos": {
+    "heading1": "Manav Jagriti Sanstha's",
+    "heading2": "Vision and Commitment",
+    "p": "The reconstruction of temples is not merely the collection of stones, but the restoration of the cultural consciousness of society."
+  },
+  "Methodology": {
+    "heading1": "Working Methodology",
+    "heading2": ": From Survey to Dedication",
+    "p": "The restoration of sacred sites is carried out in four major phases by combining the principles of scriptures with the precision of modern technology."
+  },
+  "TempleDonationForm": {
+    "heading": "Manav Jagriti Sanstha",
+    "p": "Your small contribution helps accelerate our service initiatives.",
+    "option1": "General Temple Restoration Fund",
+    "option2": "Stone Donation Service",
+    "option3": "Idol Service and Worship Management",
+    "option4": "Annakshetra Service (Food Distribution)",
+    "option5": "Clothing and Ornament Service",
+    "option6": "Festival and Cultural Events",
+    "option7": "Gaushala Service"
+  },
+  "ContactUs": {
+    "title1": "Connect with the Organization and",
+    "title2": "Contribute",
+    "p": "For any information or support related to cow service, heritage preservation, or spiritual gatherings, you can directly contact our service center."
+  },
+  "Contact": {
+    "headOffice": "Head Office",
+    "headOfficeP": "You can communicate directly with our Vice President or service managers through the contact details provided below.",
+    "title1": "Ashram Address",
+    "mainHeading": "Human Awakening Organization",
+    "content1": "Shree Radha Sarveshwar Dham Mandir Bhajnashram, Sri Premanand Rd, Rajpur, Vrindavan, Uttar Pradesh 281121",
+
+    "title2": "Service Helpline Number",
+    "content2": "Timing: 08:00 AM to 08:00 PM",
+
+    "title3": "Email Contact",
+    "content3": "For official proposals and queries related to donation receipts.",
+
+    "noteHeading": "Special Information",
+    "noteDetails": "If you wish to organize a large community feast or special food service (Sadhu Seva) for saints during festivals or auspicious full moon occasions, please inform us at least 3 days before your arrival.",
+
+    "formHeading": "Send a Message",
+    "formP": "Submit your query, and our team will contact you within 24 working hours.",
+    "name": "Your Name",
+    "number": "Mobile Number",
+    "email": "Email ID",
+    "subject": "Subject of Service Interest",
+    "description": "Your Message / Details",
+    "submit": "Send Message",
+    "sevaOptions": {
+  "general": "General Inquiry / Information",
+  "cowService": "Monthly Cow Service Donation",
+  "heritageRestoration": "Temple / Kund Restoration Service",
+  "volunteer": "Become a Volunteer"
+},
+    "googleMapHeading": "Location on Google Maps"
+  }
+}
+
+
+
+
+
+
+
+
+

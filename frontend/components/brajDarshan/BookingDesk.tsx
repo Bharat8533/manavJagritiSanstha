@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function BookingDesk() {
+  const t = useTranslations("BookingDesk");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -32,98 +34,74 @@ export default function BookingDesk() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch relative z-10">
         {/* Left Column (5 Cols): Premium Central Secretariat Information Panel */}
-        <div className="lg:col-span-5 flex flex-col justify-between bg-gradient-to-br from-[#3D2511] via-[#2B1E16] to-[#1F140E] text-[#FDFBF7] border border-[#D4A017]/20 rounded-[2.5rem] p-8 sm:p-10 shadow-[0_20px_50px_rgba(61,37,17,0.15)] relative overflow-hidden group">
-          {/* Decorative Corner Light Strike */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#D4A017]/10 to-transparent pointer-events-none" />
-
+        <div className="lg:col-span-5 flex flex-col justify-between bg-white border border-[#E5E0D8] rounded-3xl p-8 sm:p-10 shadow-sm">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#D4A017]/30 bg-white/5 px-3 py-1 mb-6 backdrop-blur-md">
-              <span className="text-[9px] font-sans font-extrabold uppercase tracking-[0.25em] text-[#F4D28C]">
-                Central Secretariat
-              </span>
-            </div>
+            {/* Minimal Badge */}
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#A63D00] bg-[#FFF5EF] px-3 py-1 rounded-full mb-6 inline-block">
+              {t("subheading")}
+            </span>
 
-            <h3 className="font-serif text-2xl sm:text-3xl font-normal tracking-wide text-white leading-snug mb-8">
-              मुख्य कार्यालय एवं <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F4D28C] to-[#D4A017] font-bold">
-                संपर्क सूत्र बोर्ड
-              </span>
+            {/* Title */}
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#2C1810] mb-10">
+              {t("headingquote1")} <br />
+              <span className="text-[#A63D00]">{t("headingquote2")}</span>
             </h3>
 
-            <div className="space-y-5 text-xs font-sans text-[#EADFC9]/90 font-medium">
-              {/* Yatra Management Center Card */}
-              <div className="relative group/card bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.06] hover:border-[#D4A017]/30 rounded-2xl p-6 transition-all duration-300 shadow-[inner_0_1px_1px_rgba(255,255,255,0.05)]">
-                <div className="flex items-start gap-4">
-                  {/* Icon Placeholder Node */}
-                  <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-[#D4A017]/10 border border-[#D4A017]/20 flex items-center justify-center text-[#F4D28C] text-xs font-bold group-hover/card:bg-[#D4A017]/20 transition-colors duration-300">
-                    📍
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-[9px] text-[#D4A017] uppercase tracking-[0.2em] font-black">
-                      यात्रा प्रबंधन केंद्र
-                    </p>
-                    <p className="text-base font-serif font-bold text-[#FDFBF7] tracking-wide">
-                      गुरुकुलम् ब्रज यात्रा प्रभाग
-                    </p>
-                    <p className="pt-1 text-xs text-[#EADFC9]/70 leading-relaxed font-light">
-                      रमन रेती मार्ग, वृंदावन, मथुरा, उत्तर प्रदेश - २८११२१
-                    </p>
-                  </div>
+            <div className="space-y-4">
+              {/* Management Center */}
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#FFF5EF] flex items-center justify-center text-[#A63D00]">
+                  📍
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-[#A63D00] mb-0.5">
+                    {t("p2")}
+                  </p>
+                  <p className="font-bold text-[#2C1810]">{t("p1")}</p>
+                  <p className="text-sm text-[#5D4037]/70 leading-relaxed">
+                    {t("p3")}
+                  </p>
                 </div>
               </div>
 
-              {/* Helpline Numbers Card */}
-              <div className="relative group/card bg-gradient-to-br from-white/[0.03] to-transparent border border-white/[0.06] hover:border-[#D4A017]/30 rounded-2xl p-6 transition-all duration-300 shadow-[inner_0_1px_1px_rgba(255,255,255,0.05)]">
-                <div className="flex items-start gap-4">
-                  {/* Icon Placeholder Node */}
-                  <div className="flex-shrink-0 w-8 h-8 rounded-xl bg-[#D4A017]/10 border border-[#D4A017]/20 flex items-center justify-center text-[#F4D28C] text-xs font-bold group-hover/card:bg-[#D4A017]/20 transition-colors duration-300">
-                    📞
-                  </div>
-                  <div className="space-y-2 w-full">
-                    <p className="text-[9px] text-[#D4A017] uppercase tracking-[0.2em] font-black">
-                      हेल्पलाइन नंबर (24x7 Support)
-                    </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 font-mono text-sm font-bold tracking-wider text-white">
-                      <a
-                        href="tel:+919876543210"
-                        className="flex items-center justify-between bg-white/[0.02] border border-white/[0.04] hover:border-[#D4A017]/40 rounded-xl px-4 py-2.5 hover:text-[#F4D28C] transition-all duration-300"
-                      >
-                        <span>+91 98765 43210</span>
-                        <span className="text-[10px] text-white/20 group-hover/card:text-[#D4A017]/60">
-                          ↗
-                        </span>
-                      </a>
-                      <a
-                        href="tel:+91565244200"
-                        className="flex items-center justify-between bg-white/[0.02] border border-white/[0.04] hover:border-[#D4A017]/40 rounded-xl px-4 py-2.5 hover:text-[#F4D28C] transition-all duration-300"
-                      >
-                        <span>+91 565 244200</span>
-                        <span className="text-[10px] text-white/20 group-hover/card:text-[#D4A017]/60">
-                          ↗
-                        </span>
-                      </a>
-                    </div>
+              <div className="h-px bg-[#F0EBE5] my-6" />
+
+              {/* Helpline */}
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#FFF5EF] flex items-center justify-center text-[#A63D00]">
+                  📞
+                </div>
+                <div className="w-full">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-[#A63D00] mb-3">
+                    {t("p4")}
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-bold text-[#2C1810]">
+                    <a
+                      href="tel:+919319087326"
+                      className="hover:text-[#A63D00] transition-colors"
+                    >
+                      +91 93190 87326
+                    </a>
+                    <a
+                      href="tel:+919219663835"
+                      className="hover:text-[#A63D00] transition-colors"
+                    >
+                      +91 92196 63835
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-10 lg:mt-0 pt-6 border-t border-white/[0.05] flex items-center justify-between">
-            <div>
-              <p className="text-[9px] text-[#D4A017] uppercase tracking-[0.15em] font-black mb-1">
-                आधिकारिक ईमेल
-              </p>
-              <p className="text-xs font-mono font-medium text-[#FDFBF7]/80 hover:text-white transition-colors lowercase cursor-pointer">
-                yatra@gurukulam.org
-              </p>
-            </div>
-            <div className="w-8 h-8 rounded-full border border-[#D4A017]/30 flex items-center justify-center text-[#D4A017] text-xs font-bold group-hover:scale-110 transition-transform duration-300">
-              ✦
-            </div>
+          {/* Footer */}
+          <div className="mt-10 pt-6 border-t border-[#F0EBE5] flex items-center justify-between">
+            <p className="text-sm text-[#5D4037] hover:text-[#A63D00] transition-colors cursor-pointer">
+              manavjagriti19@gmail.com
+            </p>
+            <div className="text-[#A63D00]/30">✦</div>
           </div>
         </div>
-
         {/* Right Column (7 Cols): Elite Luxury Intake Form Box */}
         <form
           onSubmit={handleSubmit}
@@ -135,10 +113,10 @@ export default function BookingDesk() {
           <div>
             <div className="mb-8">
               <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#3D2511]">
-                डिजिटल पंजीकरण प्रभाग
+                {t("formheading")}
               </h3>
               <p className="text-xs text-[#7A5833]/80 mt-1 font-medium">
-                Fill out the registry records carefully for instant processing.
+                {t("formsubheading")}
               </p>
             </div>
 
@@ -147,7 +125,7 @@ export default function BookingDesk() {
                 {/* Full Name */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-[#7A5833] block pl-1">
-                    श्रद्धालु का पूरा नाम
+                    {t("formname")}
                   </label>
                   <input
                     type="text"
@@ -163,7 +141,7 @@ export default function BookingDesk() {
                 {/* Mobile Number */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-[#7A5833] block pl-1">
-                    मोबाइल नंबर (WhatsApp)
+                    {t("formnumber")}
                   </label>
                   <input
                     type="tel"
@@ -181,7 +159,7 @@ export default function BookingDesk() {
                 {/* Email Address */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-[#7A5833] block pl-1">
-                    ईमेल आईडी (वैकल्पिक)
+                    {t("formemail")}
                   </label>
                   <input
                     type="email"
@@ -223,10 +201,10 @@ export default function BookingDesk() {
                       className="w-full bg-[#FCFAF6] border border-[#D4A017]/20 rounded-xl px-4 py-3.5 text-xs text-[#3D2511] font-semibold focus:outline-none focus:border-[#3D2511] focus:bg-white cursor-pointer shadow-sm appearance-none pr-10"
                     >
                       <option value="pedal">
-                        दिव्य संकल्प यात्रा (पैदल - 21 दिन)
+                        {t("formyatramode1")}
                       </option>
                       <option value="vahan">
-                        सुखद वाहन यात्रा (गाड़ी - 7 दिन)
+                        {t("formyatramode2")}
                       </option>
                     </select>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-[#7A5833] text-[9px] pointer-events-none">
@@ -238,7 +216,7 @@ export default function BookingDesk() {
                 {/* Pilgrim Headcount Box */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-[#7A5833] block pl-1">
-                    कुल सदस्यों की संख्या
+                    {t("formtotalmembers")}
                   </label>
                   <input
                     type="number"
@@ -258,7 +236,7 @@ export default function BookingDesk() {
             type="submit"
             className="w-full bg-[#3D2511] text-[#FDFBF7] font-sans text-xs uppercase tracking-[0.2em] font-black py-4 rounded-xl border border-transparent hover:bg-[#D4A017] hover:text-[#3D2511] transition-all duration-300 shadow-[0_4px_15px_rgba(61,37,17,0.1)] hover:shadow-[0_10px_25px_rgba(212,160,23,0.2)] cursor-pointer mt-8 text-center"
           >
-            सुरक्षित डिजिटल पंजीकरण करें ✦
+            {t("formsubmit")}
           </button>
         </form>
       </div>

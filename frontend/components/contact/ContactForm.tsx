@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 // Typescript interface props ko define karne ke liye
 interface ContactFormProps {
@@ -22,15 +23,15 @@ export default function ContactForm({
   onSubmit,
   submitted,
 }: ContactFormProps) {
+  const t = useTranslations("Contact");
   return (
     <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-[#D4A017]/15 shadow-[0_10px_40px_rgba(44,24,16,0.02)] text-left">
       <div className="mb-6">
         <h3 className="font-serif text-xl font-bold text-[#2C1810]">
-          संदेश प्रेषित करें
+          {t("formHeading")}
         </h3>
         <p className="text-xs text-[#5C3A1E]/70 font-light mt-1">
-          अपनी क्वेरी सबमिट करें, हमारी टीम 24 कार्य घंटों के भीतर आपसे संपर्क
-          करेगी।
+          {t("formP")}
         </p>
       </div>
 
@@ -46,14 +47,14 @@ export default function ContactForm({
           {/* Name */}
           <div className="space-y-1.5">
             <label className="text-[11px] font-bold uppercase tracking-wider text-[#5C3A1E]/80">
-              आपका नाम *
+              {t("name")} *
             </label>
             <input
               type="text"
               required
               value={formState.name}
               onChange={(e) => onChange({ name: e.target.value })}
-              placeholder="उदा. भरत शर्मा"
+              placeholder="उदा. xxxx xxxx"
               className="w-full bg-[#FCFAF5] border border-[#D4A017]/20 rounded-xl px-4 py-3 text-xs text-[#2C1810] placeholder-[#5C3A1E]/40 focus:outline-none focus:border-[#A63D00] focus:bg-white transition-all duration-200"
             />
           </div>
@@ -61,7 +62,7 @@ export default function ContactForm({
           {/* Phone */}
           <div className="space-y-1.5">
             <label className="text-[11px] font-bold uppercase tracking-wider text-[#5C3A1E]/80">
-              मोबाइल नंबर *
+              {t("number")} *
             </label>
             <input
               type="tel"
@@ -78,7 +79,7 @@ export default function ContactForm({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="space-y-1.5">
             <label className="text-[11px] font-bold uppercase tracking-wider text-[#5C3A1E]/80">
-              ईमेल आईडी
+              {t("email")}
             </label>
             <input
               type="email"
@@ -91,20 +92,24 @@ export default function ContactForm({
 
           <div className="space-y-1.5">
             <label className="text-[11px] font-bold uppercase tracking-wider text-[#5C3A1E]/80">
-              सेवा रुचि का विषय
+              {t("subject")}
             </label>
             <select
               value={formState.sevaInterest}
               onChange={(e) => onChange({ sevaInterest: e.target.value })}
               className="w-full bg-[#FCFAF5] border border-[#D4A017]/20 rounded-xl px-4 py-3 text-xs text-[#2C1810] focus:outline-none focus:border-[#A63D00] focus:bg-white transition-all duration-200 appearance-none cursor-pointer"
             >
-              <option value="सामान्य पूछताछ">सामान्य पूछताछ / जानकारी</option>
-              <option value="गौ सेवा योगदान">मासिक गौ सेवा दान</option>
+              <option value="सामान्य पूछताछ">
+                {t("sevaOptions.general")}
+              </option>
+              <option value="गौ सेवा योगदान">
+                {t("sevaOptions.cowService")}
+              </option>
               <option value="धरोहर जीर्णोद्धार">
-                मंदिर / कुंड जीर्णोद्धार सेवा
+                {t("sevaOptions.heritageRestoration")}
               </option>
               <option value="स्वयंसेवक सदस्यता">
-                स्वयंसेवक (Volunteer) बनना
+               {t("sevaOptions.volunteer")}
               </option>
             </select>
           </div>
@@ -113,7 +118,7 @@ export default function ContactForm({
         {/* Message */}
         <div className="space-y-1.5">
           <label className="text-[11px] font-bold uppercase tracking-wider text-[#5C3A1E]/80">
-            आपका संदेश / विवरण *
+            {t("description")} *
           </label>
           <textarea
             rows={4}
@@ -129,9 +134,9 @@ export default function ContactForm({
         <div className="pt-2">
           <button
             type="submit"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#2C1810] to-[#1A0B05] text-[#F4D28C] hover:from-[#A63D00] hover:to-[#7A1F0E] hover:text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-[#2C1810]/10 transition-all duration-300"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#2C1810] to-[#1A0B05] text-[#F4D28C] hover:from-[#A63D00] hover:to-[#7A1F0E] hover:text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-[#2C1810]/10 transition-all duration-300 cursor-pointer"
           >
-            संदेश भेजें 📤
+            {t("submit")} 📤
           </button>
         </div>
       </form>

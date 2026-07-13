@@ -2,136 +2,126 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
+import DonateButton from './DonateButton'
 
-// 1. Navigation Links का Data Structure
+// Define the keys to match your JSON structure
 const NAV_LINKS = [
-  { label: "Home", href: "/", icon: "" },
-  { label: "About", href: "/about", icon: "ℹ️" },
-  { label: "Gau Seva", href: "/gauseva", icon: "🐄" },
-  { label: "Katha Booking", href: "/kathaBooking", icon: "📿" },
-  { label: "Braj Darshan", href: "/brajDarshan", icon: "🛕" },
-  { label: "Temples", href: "/temple", icon: "🏛" },
-  { label: "Gurukulam", href: "/gurukulam", icon: "✨" },
-  { label: "Blogs", href: "/blogs", icon: "📖" },
-  { label: "Contact", href: "/contact", icon: "📞" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "gauseva", href: "/gauseva" },
+  { key: "kathaBooking", href: "/kathaBooking" },
+  { key: "brajDarshan", href: "/brajDarshan" },
+  { key: "temples", href: "/temple" },
+  { key: "gurukulam", href: "/gurukulam" },
+  { key: "blogs", href: "/blogs" },
+  { key: "contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const t = useTranslations("Navigation"); // Assuming your translations namespace
 
-  // Handle background change on scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileNav = () => setIsMobileOpen(!isMobileOpen);
-
-  const handleDonateClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (typeof window !== "undefined" && (window as any).openModal) {
-      (window as any).openModal("donate");
-    } else {
-      console.log("Open donate modal");
-    }
-  };
+  const closeMobileNav = () => setIsMobileOpen(false);
 
   return (
     <>
-      {/* DESKTOP & BASE NAVBAR */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-[999] transition-all backdrop-blur-xs duration-400 px-8 ${
-          isScrolled
-            ? "bg-[#100500] backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
-            : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 py-3 md:py-2 ${
+          isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white"
         }`}
       >
-        <div className="mx-auto flex items-center justify-between h-[70px]">
-          {/* Logo Section */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="font-serif text-[#F4D28C] text-[1.1rem] font-bold leading-tight drop-shadow-[0_0_20px_rgba(212,160,23,0.5)] uppercase">
-              🕉 Manav Jagriti Sansthaan
-              <span className="text-[0.55rem] tracking-[0.15em] text-[rgba(244,210,140,0.7)] block">
-                मानव जागृति संस्थान — Spiritual Trust
-              </span>
-            </div>
+        <div className="mx-auto flex items-center justify-between h-[70px] max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center flex-shrink-0"
+            onClick={closeMobileNav}
+          >
+            <img
+              src="https://mjsvrindavan.com/wp-content/uploads/2025/09/logo.png"
+              alt="Logo"
+              className="w-24 sm:w-28 h-auto transition-all duration-200"
+            />
           </Link>
 
-          {/* Desktop Navigation Links (Looping dynamically) */}
-          <ul className="hidden md:flex items-center gap-6 list-none">
+          {/* Desktop Navigation */}
+          <ul className="hidden lg:flex items-center gap-5 lg:gap-8 list-none">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-[rgba(244,210,140,0.85)] text-[0.78rem] font-medium tracking-wide uppercase transition duration-300 hover:text-[#F4D28C]"
+                  className="text-[#5D4037] text-[0.8rem] md:text-[0.85rem] font-semibold tracking-wide uppercase transition hover:text-[#D4A017] whitespace-nowrap"
                 >
-                  {link.label}
+                  {link.key}
                 </Link>
               </li>
             ))}
-            {/* Desktop Donate Button */}
-            <li>
-              <Link
-                href="/donate"
-                className="bg-gradient-to-r from-[#D4A017] to-[#A63D00] text-white py-1.5 px-4 rounded-[20px] font-semibold text-[0.78rem] shadow-[0_4px_15px_rgba(212,160,23,0.4)] block transition transform hover:scale-105"
-              >
-                🙏 Donate Now
-              </Link>
-            </li>
           </ul>
 
-          {/* Hamburger Menu Button */}
+          {/* Desktop Right Side */}
+          <div className="hidden lg:flex items-center gap-4">
+            {/* <Link
+              href="/donate"
+              className="bg-[#D4A017] hover:bg-[#C3950C] text-white py-2.5 px-6 rounded-[20px] font-semibold text-[0.85rem] shadow-lg transition-all active:scale-95"
+            >
+              {"donate"}
+            </Link> */}
+            <DonateButton />
+            <LanguageSwitcher />
+          </div>
+
+          {/* Mobile Hamburger */}
           <button
             onClick={toggleMobileNav}
-            className="block md:hidden bg-none border-none text-[#F4D28C] text-2xl cursor-pointer focus:outline-none"
-            aria-label="Toggle navigation menu"
+            className="lg:hidden text-[#5D4037] text-3xl p-2 -mr-2 active:scale-90 transition-transform"
+            aria-label={isMobileOpen ? "Close menu" : "Open menu"}
           >
             {isMobileOpen ? "✕" : "☰"}
           </button>
         </div>
       </nav>
 
-      {/* MOBILE NAVIGATION DRAWER */}
+      {/* Mobile Drawer */}
       <div
-        className={`fixed top-[70px] left-0 right-0 bg-[rgba(122,31,14,0.98)] text-center p-4 z-[998] flex flex-col gap-2 transition-all duration-300 ease-in-out border-t border-[rgba(244,210,140,0.1)] md:hidden ${
-          isMobileOpen
-            ? "opacity-100 pointer-events-auto translate-y-0"
-            : "opacity-0 pointer-events-none -translate-y-4"
+        className={`fixed top-[70px] left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-[998] lg:hidden overflow-hidden transition-all duration-300 ease-out ${
+          isMobileOpen ? "max-h-[85vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        {/* Mobile Navigation Links (Looping dynamically) */}
-        {NAV_LINKS.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={toggleMobileNav}
-            className="text-[#F4D28C] py-2 text-sm border-b border-[rgba(244,210,140,0.05)] hover:bg-[rgba(212,160,23,0.05)] transition flex items-center justify-center gap-2"
-          >
-            {link.icon && <span>{link.icon}</span>}
-            {link.label === "Katha"
-              ? "Katha Booking"
-              : link.label === "About"
-                ? "About Trust"
-                : link.label}
-          </Link>
-        ))}
-
-        {/* Mobile Donate Button */}
-        <Link
-          href="#"
-          onClick={(e) => {
-            handleDonateClick(e);
-            toggleMobileNav();
-          }}
-          className="text-[#F4D28C] font-semibold bg-[rgba(212,160,23,0.1)] mt-2 py-3 rounded-lg border border-[rgba(212,160,23,0.2)] hover:bg-[rgba(212,160,23,0.2)] transition"
-        >
-          🙏 Donate Now
-        </Link>
+        <div className="flex flex-col p-6 gap-2 max-h-[85vh] overflow-y-auto">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={closeMobileNav}
+              className="text-[#5D4037] py-4 uppercase px-4 text-lg font-medium border-b border-gray-100 hover:bg-gray-50 hover:text-[#D4A017] rounded-xl transition-all active:bg-gray-100"
+            >
+              {link.key}
+            </Link>
+          ))}
+          {/* Mobile Donate & Language */}
+          <div className="flex flex-col gap-4 pt-6 mt-4 border-t border-gray-200">
+            <Link
+              href="/donate"
+              onClick={toggleMobileNav}
+              className="bg-[#D4A017] hover:bg-[#C3950C] text-white py-4 text-center rounded-2xl font-semibold text-lg shadow-md active:scale-[0.985] transition-all"
+            >
+              {"donate"}
+            </Link>
+            <div className="flex justify-center pt-2">
+              <LanguageSwitcher />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

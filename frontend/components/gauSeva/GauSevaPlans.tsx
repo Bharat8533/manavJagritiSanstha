@@ -1,196 +1,139 @@
 "use client";
 
 import React, { useState } from "react";
-import { PlanType, GauSevaPlansProps } from "../UI/Types.types";
-
-const PLANS_DATA: PlanType[] = [
-  {
-    id: "one-meal",
-    title: "एक समय का संपूर्ण भोजन (One Full Meal)",
-    amount: 11000, // Balanced logical amount for a community gaushala meal batch
-    desc: "संपूर्ण गौशाला की पावन गऊ माताओं को एक समय का पौष्टिक हरा चारा, कुट्टी एवं अमृत जल सेवा।",
-    badge: "सुलभ सेवा",
-  },
-  {
-    id: "three-days",
-    title: "3 दिवसीय संपूर्ण पोषण सेवा",
-    amount: 31000,
-    desc: "3 दिनों तक समस्त गौवंश के लिए औषधीय खल, चोकर, दलिया एवं गुड़ मिश्रित विशेष पौष्टिक आहार।",
-    badge: "विशेष संकल्प",
-  },
-  {
-    id: "seven-days",
-    title: "7 दिवसीय साप्ताहिक महासेवा",
-    amount: 71000,
-    desc: "एक सप्ताह तक सुरभी तीर्थ की समस्त गऊ माताओं के भोजन, आश्रय प्रबंधन एवं संपूर्ण चिकित्सा व्यवस्था का दायित्व।",
-    badge: "लोकप्रिय",
-    isFeatured: true,
-  },
-  {
-    id: "one-month",
-    title: "1 मासिक पूर्ण गऊ संरक्षण संकल्प",
-    amount: 251000, // Realistic corporate/high-donor monthly adoption cost
-    desc: "एक मास तक संपूर्ण गौशाला के चारे, चोकर, उत्तम चिकित्सा, सहायकों के मानदेय एवं रखरखाव का पूर्ण संरक्षण दायित्व।",
-    badge: "महा संकल्प",
-  },
-];
+import { useTranslations } from "next-intl";
+import { GauSevaPlansProps } from "../UI/Types.types";
 
 export default function GauSevaPlans({
+  plans,
   customAmount,
   setCustomAmount,
   onPlanSelect,
 }: GauSevaPlansProps): React.JSX.Element {
-  const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
+  const t = useTranslations("GauSevaPlans");
 
   return (
     <section
       className="py-24 bg-[#FAF8F5] relative overflow-hidden"
       id="sankalpa"
     >
-      {/* Decorative Elite Organic Mesh Backgrounds */}
       <div className="absolute top-[-10%] right-[-10%] w-125 h-125 bg-[#A63D00]/3 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-10%] w-125 h-125 bg-[#D4A017]/4 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Main Split Architecture Frame */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* LEFT SIDEBAR COLUMN */}
+          {/* Left Column */}
           <div className="lg:col-span-5 space-y-8 lg:sticky self-start h-fit">
             <div className="space-y-4 text-left">
               <span className="inline-block text-[10px] font-bold tracking-[0.3em] text-[#A63D00] uppercase bg-[#A63D00]/5 border border-[#A63D00]/10 px-3.5 py-1.5 rounded-md">
-                SANKALPA PORTAL
+                {t("subheading")}
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#1E0F0A] tracking-tight leading-[1.2]">
-                पुण्य और <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#A63D00] to-[#D4A017] inline-block pt-2">
-                  धरातलीय संकल्प
+                {t("heading_part1")} <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A63D00] to-[#D4A017] inline-block pt-2">
+                  {t("heading_part2")}
                 </span>
               </h2>
               <p className="text-sm text-[#5C3A1E]/70 font-light leading-relaxed max-w-md pt-2">
-                वृंदावन धाम में आश्रित बेसहारा और बीमार गऊ माताओं के दैनिक पोषण,
-                चिकित्सा और संरक्षण के लिए अपनी सामर्थ्य अनुसार पवित्र माध्यम
-                चुनें।
+                {t("description")}
               </p>
             </div>
 
-            {/* Quick Micro trust badge inside sidebar */}
-            <div className="p-6 rounded-2xl bg-white border border-[#1E0F0A]/5 space-y-3 shadow-[0_10px_30px_rgba(0,0,0,0.01)] max-w-md">
+            <div className="p-6 rounded-2xl bg-white border border-[#1E0F0A]/5 space-y-3 shadow-sm max-w-md">
               <h4 className="text-xs font-bold text-[#1E0F0A] tracking-wider uppercase flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#A63D00] rounded-full" />{" "}
-                प्रत्यक्ष पारदर्शिता संकल्प
+                {t("trust_badge")}
               </h4>
               <p className="text-xs text-[#5C3A1E]/60 font-light leading-normal">
-                आपके द्वारा दी गई प्रत्येक राशि सीधे गऊशाला के FEEDING और मेडिकल
-                केयर ऑपरेशन्स में काम आती है। आप कभी भी आकर अपनी सेवा का
-                निरीक्षण कर सकते हैं।
+                {t("trust_desc")}
               </p>
             </div>
           </div>
 
-          {/* RIGHT COLUMN */}
+          {/* Right Column */}
           <div className="lg:col-span-7 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 items-stretch">
-              {/* Individual Plan Cards */}
-              {PLANS_DATA.map((plan) => (
+              {plans.map((plan) => (
                 <div
                   key={plan.id}
-                  onMouseEnter={() => setHoveredPlan(plan.id)}
-                  onMouseLeave={() => setHoveredPlan(null)}
-                  className={`relative p-8 rounded-4xl border flex flex-col justify-between transition-all duration-500 ease-out text-left select-none group lg:col-span-6 md:col-span-1
-                ${
-                  plan.isFeatured
-                    ? "bg-[#FFF9EE] border-[#A63D00]/30 shadow-[0_15px_40px_-15px_rgba(166,61,0,0.06)] hover:shadow-[0_20px_40px_-10px_rgba(166,61,0,0.1)]"
-                    : "bg-white border-[#2C1810]/5 shadow-[0_4px_25px_-10px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_-20px_rgba(44,24,16,0.06)] hover:border-[#A63D00]/20"
-                }`}
+                  className={`relative p-8 rounded-4xl border flex flex-col justify-between transition-all duration-500 text-left lg:col-span-6 ${plan.isFeatured === "1" ? "bg-[#FFF9EE] border-[#A63D00]/30 shadow-md" : "bg-white border-[#2C1810]/5"}`}
                 >
                   <div className="space-y-5">
                     <span
-                      className={`inline-block text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-md transition-colors duration-300
-                  ${plan.isFeatured ? "bg-[#A63D00] text-white" : "bg-[#A63D00]/5 text-[#A63D00] group-hover:bg-[#A63D00]/10"}`}
+                      className={`inline-block text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-md ${plan.isFeatured === "1" ? "bg-[#A63D00] text-white" : "bg-[#A63D00]/5 text-[#A63D00]"}`}
                     >
                       {plan.badge}
                     </span>
-                    <h3 className="font-serif text-xl font-bold text-[#2C1810] tracking-wide group-hover:text-[#A63D00] transition-colors duration-300">
+                    <h3 className="font-serif text-xl font-bold text-[#2C1810]">
                       {plan.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-[#5C3A1E]/80 font-light leading-relaxed">
                       {plan.desc}
                     </p>
                   </div>
-
                   <div className="mt-8 pt-5 border-t border-dashed border-[#2C1810]/10 flex items-center justify-between">
                     <div>
                       <span className="text-[10px] text-[#5C3A1E]/50 block font-bold uppercase tracking-wider">
-                        सेवा राशि
+                        {t("service_amount")}
                       </span>
-                      <span className="font-sans text-2xl lg:text-3xl font-extrabold text-[#2C1810]">
-                        ₹{plan.amount.toLocaleString("en-IN")}
+                      <span className="font-sans text-2xl font-extrabold text-[#2C1810]">
+                        ₹
+                        {(
+                          parseFloat(plan.amount as string) || 0
+                        ).toLocaleString("en-IN")}
                       </span>
                     </div>
-
                     <button
                       onClick={() => onPlanSelect(plan)}
-                      className={`text-xs font-bold uppercase tracking-wider px-5 py-3.5 rounded-xl transition-all duration-300 transform active:scale-95 cursor-pointer shadow-sm
-                    ${
-                      plan.isFeatured
-                        ? "bg-[#A63D00] text-white hover:bg-[#8B2612]"
-                        : "bg-[#2C1810] text-[#F4D28C] hover:bg-[#A63D00] hover:text-white"
-                    }`}
+                      className={`text-xs font-bold uppercase px-5 py-3.5 rounded-xl transition-all ${plan.isFeatured === "1" ? "bg-[#A63D00] text-white" : "bg-[#2C1810] text-[#F4D28C]"}`}
                     >
-                      Sankalpa ✓
+                      {t("btn_label")}
                     </button>
                   </div>
                 </div>
               ))}
 
-              {/* CUSTOM AMOUNT CONFIGURATOR BLOCK */}
-              <div className="bg-linear-to-br from-[#2C1810] to-[#160B07] p-8 rounded-4xl text-left text-white flex flex-col justify-between md:col-span-2 lg:col-span-12 border border-white/4 shadow-xl relative overflow-hidden group">
-                <div className="absolute -right-10 -bottom-10 w-44 h-44 bg-[#A63D00]/20 rounded-full blur-3xl pointer-events-none" />
-
+              {/* Custom Amount Block */}
+              <div className="bg-white/80 backdrop-blur-xl p-8 rounded-4xl border border-stone-200 shadow-sm md:col-span-2 lg:col-span-12">
                 <div className="space-y-4">
-                  <span className="inline-block text-[9px] font-bold tracking-widest uppercase bg-white/10 text-[#F4D28C] px-2.5 py-1 rounded-md">
-                    इच्छानुसार सेवा
+                  <span className="inline-block text-[9px] font-bold tracking-widest uppercase bg-[#A63D00]/5 text-[#A63D00] px-2.5 py-1 rounded-md">
+                    {t("custom.badge")}
                   </span>
-                  <h3 className="font-serif text-xl font-bold text-[#F4D28C] tracking-wide">
-                    स्वेच्छा संकल्प (Custom Pledge)
+                  <h3 className="font-serif text-xl font-bold text-stone-900">
+                    {t("custom.heading")}
                   </h3>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed max-w-2xl">
-                    आप अपनी इच्छानुसार कोई भी कस्टमाइज्ड राशि दर्ज करके सीधे गौ
-                    सेवा कोष में योगदान दे सकते हैं। आपकी सूक्ष्म श्रद्धा भी गऊ
-                    माताओं के आश्रय और उपचार में अत्यंत सहायक है।
+                  <p className="text-xs sm:text-sm text-stone-600 font-medium leading-relaxed max-w-2xl">
+                    {t("custom.desc")}
                   </p>
                 </div>
-
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center border-t border-white/10 pt-5">
+                <div className="mt-8 grid grid-cols-1 sm:grid-cols-12 gap-4 items-center border-t border-stone-200 pt-5">
                   <div className="relative sm:col-span-8">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#F4D28C] font-bold text-lg font-sans">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#A63D00] font-bold text-lg">
                       ₹
                     </span>
                     <input
                       type="number"
-                      placeholder="Enter custom amount"
+                      placeholder={t("custom.placeholder")}
                       value={customAmount || ""}
                       onChange={(e) =>
                         setCustomAmount(parseFloat(e.target.value) || 0)
                       }
-                      className="w-full bg-white/4 border border-white/10 rounded-xl py-3.5 pl-9 pr-4 text-white font-sans placeholder-white/20 focus:outline-none focus:border-[#D4A017] focus:bg-white/[0.07] text-sm font-semibold transition-all duration-300 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      className="w-full bg-stone-50 border border-stone-200 rounded-xl py-3.5 pl-9 pr-4 text-sm font-semibold"
                     />
                   </div>
-
                   <button
-                    disabled={!customAmount || customAmount <= 0}
                     onClick={() =>
                       onPlanSelect({
                         id: "custom",
-                        title: "स्वेच्छा संकल्प",
-                        amount: customAmount,
-                        desc: "Custom Donation Account Setup",
-                        badge: "स्वेच्छा संकल्प",
+                        title: t("custom.heading"),
+                        amount: customAmount as number,
+                        desc: "Custom Donation",
+                        badge: t("custom.badge"),
                       })
                     }
-                    className="w-full sm:col-span-4 bg-linear-to-r from-[#D4A017] to-[#A63D00] text-white disabled:opacity-40 disabled:pointer-events-none transition-all duration-300 text-xs font-bold uppercase tracking-widest py-4 rounded-xl text-center shadow-lg active:scale-[0.98] cursor-pointer whitespace-nowrap"
+                    className="w-full sm:col-span-4 bg-gradient-to-r from-[#D4A017] to-[#A63D00] text-white text-xs font-bold uppercase tracking-widest py-4 rounded-xl"
                   >
-                    Contribute Now
+                    {t("custom.btn")}
                   </button>
                 </div>
               </div>

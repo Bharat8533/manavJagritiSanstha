@@ -1,6 +1,8 @@
 import React from "react";
-
+import { useTranslations } from "next-intl";
 export default function AboutConcept(): React.JSX.Element {
+
+  const t = useTranslations("TempleAboutConcept");
   return (
     <section className="py-28 bg-[#FAF8F5] relative overflow-hidden selection:bg-[#D4A017] selection:text-[#130B07]">
       {/* Subtle Background Traditional Accents */}
@@ -16,25 +18,16 @@ export default function AboutConcept(): React.JSX.Element {
                 संकल्पना परिचय | Heritage Revival
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1E0F0A] tracking-tight leading-[1.25]">
-                क्यों आवश्यक है <br />
+                {t("headingquote1")} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A63D00] via-[#B85314] to-[#D4A017] inline-block pt-1">
-                  खंडित देवालयों का उद्धार?
+                  {t("headingquote2")}
                 </span>
               </h2>
             </div>
 
             <div className="space-y-6 text-[#5C3A1E]/80 font-light text-sm sm:text-base leading-relaxed">
-              <p>
-                हमारे प्राचीन मंदिर केवल ईंट-पत्थरों से बने ढांचे या साधारण पूजा
-                स्थल नहीं हैं; वे हमारी उत्कृष्ट कला, इतिहास, सूक्ष्म खगोल
-                विज्ञान और सामाजिक चेतना के जागृत केंद्र हैं।
-              </p>
-              <p>
-                जब समय के क्रूर थपेड़ों, प्राकृतिक आपदाओं या किसी संकीर्ण
-                मानसिकता द्वारा किसी देवस्थान को नष्ट या उपेक्षित किया जाता है,
-                तो केवल एक इमारत नहीं टूटती, बल्कि हमारी समृद्ध सभ्यता और
-                आध्यात्मिक प्रवाह का एक अनमोल पन्ना हमेशा के लिए खो जाता है।
-              </p>
+              <p>{t("p1")}</p>
+              <p>{t("p2")}</p>
             </div>
 
             {/* Premium Minimalist Micro Features instead of generic blocks */}
@@ -45,10 +38,10 @@ export default function AboutConcept(): React.JSX.Element {
                 </span>
                 <div>
                   <h4 className="font-serif font-bold text-xs text-[#2C1810] tracking-wide">
-                    पुरातन शिल्प संरक्षण
+                    {t("subheading1")}
                   </h4>
                   <p className="text-[11px] text-[#5C3A1E]/60 font-light mt-0.5">
-                    मूल वास्तुकला से बिना किसी छेड़छाड़ के पुनर्निर्माण।
+                    {t("subheading2")}
                   </p>
                 </div>
               </div>
@@ -58,10 +51,10 @@ export default function AboutConcept(): React.JSX.Element {
                 </span>
                 <div>
                   <h4 className="font-serif font-bold text-xs text-[#2C1810] tracking-wide">
-                    सांस्कृतिक चेतना
+                    {t("subheading3")}
                   </h4>
                   <p className="text-[11px] text-[#5C3A1E]/60 font-light mt-0.5">
-                    स्थानीय समाज को पुनः दैनिक आरती और उत्सवों से जोड़ना।
+                    {t("subheading4")}
                   </p>
                 </div>
               </div>
@@ -70,9 +63,7 @@ export default function AboutConcept(): React.JSX.Element {
             {/* Elite Stylized Blockquote with Terracotta Tint Background */}
             <div className="relative p-6 rounded-2xl bg-gradient-to-r from-[#A63D00]/[0.03] to-transparent border-l-4 border-[#A63D00]">
               <p className="font-serif text-xs sm:text-sm italic text-[#2C1810] font-medium leading-relaxed">
-                "खंडित और मौन पड़े देवस्थानों में पुनः वैदिक शंखनाद, घंटानाद और
-                पवित्र मंत्रोच्चार गूंजने लगे, इससे बड़ा कोई मानवीय और
-                आध्यात्मिक पुरुषार्थ नहीं हो सकता।"
+                "{t("footer")}"
               </p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useTranslations } from "next-intl";
 interface StepType {
   number: string;
   title: string;
@@ -28,13 +28,14 @@ const STEPS_DATA: StepType[] = [
   },
   {
     number: "०४",
-    title: "प्राण प्रतिष्ठा व संकीर्तन",
+    title: "प्राण प्रतिष्ठा संकीर्तन एवं रख रखाव कमेटी गठन",
     desc: "विधि-विधान से यज्ञ, दिव्य विग्रहों की प्राण-प्रतिष्ठा और दैनिक आरती की व्यवस्था की जाती. है।",
     phase: "PHASE 04 // DEVOTION",
   },
 ];
 
 export default function Methodology(): React.JSX.Element {
+  const t = useTranslations("Methodology");
   return (
     <section className="py-28 bg-[#FAF8F5] relative overflow-hidden selection:bg-[#D4A017] selection:text-[#130B07]">
       {/* Background Decorative Element */}
@@ -47,12 +48,11 @@ export default function Methodology(): React.JSX.Element {
             Our Working Methodology
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1E0F0A] tracking-tight leading-tight">
-            कार्य प्रणाली:{" "}
-            <span className="text-[#A63D00]">सर्वेक्षण से समर्पण तक</span>
+            {t("heading1")}
+            <span className="text-[#A63D00]">{t("heading2")}</span>
           </h2>
           <p className="text-xs sm:text-sm text-[#5C3A1E]/70 font-light leading-relaxed">
-            शास्त्रों की मर्यादा और आधुनिक तकनीकी सटीकता के समन्वय से देवस्थानों
-            का जीर्णोद्धार चार प्रमुख चरणों में संपन्न होता है।
+            {t("p")}
           </p>
         </div>
 
